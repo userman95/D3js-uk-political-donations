@@ -51,6 +51,7 @@ function transition(name) {
 		$("#view-donor-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
+		$("#view-amount-type").fadeOut(250);
 		return total();
 		//location.reload();
 	}
@@ -61,6 +62,7 @@ function transition(name) {
 		$("#view-donor-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
 		$("#view-party-type").fadeIn(1000);
+		$("#view-amount-type").fadeOut(250);
 		return partyGroup();
 	}
 	if (name === "group-by-donor-type") {
@@ -70,6 +72,7 @@ function transition(name) {
 		$("#view-party-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
 		$("#view-donor-type").fadeIn(1000);
+		$("#view-amount-type").fadeOut(250);
 		return donorType();
 	}
 	if (name === "group-by-money-source")
@@ -79,8 +82,20 @@ function transition(name) {
 		$("#view-donor-type").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
 		$("#view-source-type").fadeIn(1000);
+		$("#view-amount-type").fadeOut(250);
 		return fundsType();
 	}
+	if (name === "group-by-amount") {
+		bleep.play();
+		$("#initial-content").fadeOut(250);
+		$("#value-scale").fadeOut(250);
+		$("#view-donor-type").fadeOut(250);
+		$("#view-party-type").fadeOut(250);
+		$("#view-source-type").fadeOut(250);
+		$("#view-amount-type").fadeIn(1000);
+		return amountType();
+	}
+}
 
 function start() {
 
@@ -132,6 +147,21 @@ function partyGroup() {
 		.on("tick", parties)
 		.start()
 		.colourByParty();
+}
+
+function amountType() {
+	force.gravity(0)
+		.friction(0.75)
+		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
+		.on("tick", amounts)
+		.start();
+}
+
+function amounts(e) {
+	node.each(moveToAmount(e.alpha));
+
+		node.attr("cx", function(d) { return d.x; })
+			.attr("cy", function(d) {return d.y; });
 }
 
 function donorType() {
@@ -212,6 +242,28 @@ function moveToParties(alpha) {
 			centreX = 1200;
 		} else {
 			centreY = partyCentres[d.party].y;
+		}
+
+		d.x += (centreX - d.x) * (brake + 0.02) * alpha * 1.1;
+		d.y += (centreY - d.y) * (brake + 0.02) * alpha * 1.1;
+	};
+}
+
+function moveToAmount(alpha) {
+	return function(d) {
+		
+		if (d.value <= 25000) { 
+			centreX = svgCentre.x ;
+			centreY = svgCentre.y - 80;
+		} else if (d.value <= 500000) { 
+			centreX = svgCentre.x + 250;
+			centreY = svgCentre.y - 80;
+		} else if (d.value <= 5000000) { 
+			centreX = svgCentre.x + 500;
+			centreY = svgCentre.y - 80;
+		} else{
+			centreX = svgCentre.x + 750;
+			centreY = svgCentre.y - 80;
 		}
 
 		d.x += (centreX - d.x) * (brake + 0.02) * alpha * 1.1;
