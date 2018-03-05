@@ -99,7 +99,7 @@ function start() {
 		.style("fill", function(d) { return fill(d.party); })
 		.on("mouseover", mouseover)
 		.on("mouseout", mouseout)
-	        .onclick = function() {myFunction()};
+	        .on("click", function(d) {myFunction});
 
 		// Alternative title based 'tooltips'
 		// node.append("title")
