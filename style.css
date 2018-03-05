@@ -102,6 +102,27 @@ li {
     right: 0
 }
 
+/* position of new text of new split by */
+#ID25K {
+    left: 70px;
+    top: 700px;
+    position: absolute;
+}
+#ID500K {
+    left: 350px;
+    top: 700px;
+    position: absolute;    
+}
+#ID5M {
+    left: 70px;
+    top: 100px;
+    position: absolute; 
+}
+#ID20M {    
+    left: 350px;
+    top: 100px;
+    position: absolute;    
+}
 /* Value scale */
 
 #value-scale {
