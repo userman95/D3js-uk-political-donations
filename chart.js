@@ -98,7 +98,9 @@ function start() {
 		.attr("r", 0)
 		.style("fill", function(d) { return fill(d.party); })
 		.on("mouseover", mouseover)
-		.on("mouseout", mouseout);
+		.on("mouseout", mouseout)
+	        .onclick = function() {myFunction()};
+
 		// Alternative title based 'tooltips'
 		// node.append("title")
 		//	.text(function(d) { return d.donor; });
@@ -112,6 +114,10 @@ function start() {
 		node.transition()
 			.duration(2500)
 			.attr("r", function(d) { return d.radius; });
+}
+
+function myFunction() {
+    window.open("https://www.google.gr/search?client=ubuntu&hs=ieJ&channel=fs&dcr=0&ei=2aCdWuT6JIWxsAG4uq_ABw&q=");
 }
 
 function total() {
