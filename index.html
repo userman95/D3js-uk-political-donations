@@ -30,13 +30,19 @@
         s.parentNode.insertBefore(ga, s);
     })();
     </script>
+    
+    .zoom:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5); 
+}
 </head>
 <!-- Add feature detection and noscript -->
 
 <body>
 
     <header role="banner" id="title">
-        <h1>Who's funding the big three?</h1>
+        <h1 class="zoom">Who's funding the big three?</h1>
     </header>
     <nav role="navigation">
         <ul>
