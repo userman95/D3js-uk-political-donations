@@ -115,7 +115,58 @@ li {
 #d { top: 485px;}
 #e { top: 435px;}
 #f { top: 648px; left: 575px; }
+/*Donor  */
+#view-donor-type {
+    height: 100%;
+    left: 500px;
+    width: 370px;
+    
+}
+#individual {
+    top: 55px;
+}
+#company {
+    top: 390px;
+}
+#union {
+    top: 660px;
+}
+#society {
+    top: 205px;
+    text-align: right;
+    right: 0;
+}
+#other {
+    top: 530px;
+    text-align: right;
+    right: 0
+}
 
+/* Amount */
+#view-donation-amount {
+    height: 100%;
+    left: 450px;
+    width: 370px;
+}
+#first {
+    top: 50px;
+}
+#second{
+    top: 150px;
+    left: 10px;
+}
+#third {
+    top: 335px;
+    left: -80px;
+}
+#fourth {
+    top: 480px;
+    right: -80px;
+}
+#last {
+    top: 650px;
+    left: -70px;
+}
 /* End of view */
 
 circle {
