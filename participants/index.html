@@ -189,13 +189,40 @@
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #011 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-       
+      <h4>
+        <span>&nbsp;</span>
         <img src="https://avatars1.githubusercontent.com/u/22656813?s=460&v=4" height="42" width="42">  
-        <p class="ml11">&nbsp;andreanastil&nbsp;</p>
-  </div>  
+        <span class="ml3">&nbsp;andreanastil&nbsp;</span>
+      </h4>
+  </div> 
   <script>
+    $('.ml3').each(function(){
+    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    });
 
-  </script>  
+    anime.timeline({loop: true})
+    .add({
+        targets: '.ml3 .letter',
+        opacity: [0,1],
+        easing: "easeInOutQuad",
+        duration: 2250,
+        delay: function(el, i) {
+          return 150 * (i+1)
+        }
+     }).add({
+        targets: '.ml3',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+     });
+
+  </script>
+  <style>
+     .ml3 {
+        font-weight: 900;
+     }
+  </style> 
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #011 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
