@@ -332,10 +332,51 @@
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #023 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #023&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
-  </div>
+  <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+      <h4>
+        <span>&nbsp; </span>
+        <img src="https://avatars3.githubusercontent.com/u/25747802?s=400&u=80278c313b924bb03c0eee4cddffb39b9f5ae02b&v=4" height="42" width="42">  
+        <span class="m23"><span class="letters">&nbsp;p12tzia&nbsp;</span></span>
+      </h4>
+ </div>
+ <script>
+  $('.m23 .letters').each(function(){
+    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+  });
+  
+   anime.timeline({loop:true, direction:'alternate', autoplay:true}) 
+	.add({
+    targets: '.m23 .letter',
+    translateY: [
+	    {value: '0.0em'},
+	    {value: '1.2em'},
+	    {value: '-2.0em'},
+	  ],
+	  scale: [1,1.1],
+    opacity:[0.4,1],
+    easing: "easeInSine",
+	  duration: function(target, index, targetCount) {
+      return 1000 + index * 200;
+    },
+    delay: function(target, index, targetCount) {
+      return (targetCount - index) * 1100;
+    }
+   });
+ </script>
+ <style>
+     
+	 .m23 .letter {
+      letter-spacing: 1px;
+      word-spacing: 2px;
+      line-height: 1cm;
+		  font-size: 20px;
+		  font-weight:bold;
+		  font-family:Courier New;
+		  display: inline-block;
+		  position:relative;
+   }
+     
+  </style>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #023 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
