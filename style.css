@@ -26,7 +26,7 @@ li {
 }
 
 /* Initial appearance on load */
-#view-party-type, #view-donor-type, #view-source-type, #view-amount-type {
+#view-party-type, #view-donor-type, #view-source-type {
     display: none;
 }
 
@@ -63,15 +63,15 @@ li {
 /*  Party view */
 #conservative, #labour, #libdem { padding: 10px; }
 #conservative {
-    background: rgba(255, 165, 0, 1);
+    background: rgba(8, 127, 189, 0.2);
     top: 110px;
 }
 #labour {
-    background: rgba(120, 120, 120, 1);
+    background: rgba(240, 34, 51, 0.2);
     top: 330px;
 }
 #libdem {
-    background: rgba(70, 255, 255, 1);
+    background: rgba(253, 187, 48, 0.2);
     top: 550px;
 }
 
@@ -102,27 +102,6 @@ li {
     right: 0
 }
 
-/* position of new text of new split by */
-#ID25K {
-    left: 120px;
-    top: 500px;
-    position: absolute;
-}
-#ID500K {
-    left: 550px;
-    top: 500px;
-    position: absolute;    
-}
-#ID5M {
-    left: 120px;
-    top: 140px;
-    position: absolute; 
-}
-#ID20M {    
-    left: 550px;
-    top: 140px;
-    position: absolute;    
-}
 /* Value scale */
 
 #value-scale {
