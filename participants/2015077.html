@@ -25,7 +25,6 @@
 
     <script>
         var participantsElement = document.getElementById("participants");
-        participantsElement.style.border = "2px solid black";
 
         function appendParticipantToHtml(participant) {
             var newParticipant = document.createElement("DIV");
@@ -52,9 +51,6 @@
             participantImg.style.marginRight = "10px";
             participantImg.style.padding = "0";
             participantImg.style.border = "2px solid black";
-            participantImg.onclick = function(participant) {
-                window.open(participant.html_url);
-            };
 
             var participantP = document.createElement("P");
             participantP.id = participant.login + "-p";
