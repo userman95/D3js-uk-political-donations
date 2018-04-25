@@ -138,10 +138,86 @@ ml.timelines["ml0"] = anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #003 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #003&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
-  </div>
+  <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+                  <h4>
+                        <span>&nbsp;</span>
+                        <img src="https://avatars3.githubusercontent.com/u/22676085?s=400&u=22e9562f6584131db9cb09ad4578a03b86b4b433&v=4" height="42"
+                              width="42">
+
+                        <span class="ml3">
+                              <span class="text-wrapper">
+                                    <span class="letters3">DimitrisTria</span>
+                                    <span class="line3"></span>
+                              </span>
+                        </span>
+                  </h4>
+
+                  <script>
+                        var ml3 = { timelines: {} };
+
+                        // Wrap every letter in a span
+                        $('.ml3 .letters3').each(function () {
+                              $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter3'>$&</span>"));
+                        });
+
+                        anime.timeline({ loop: true })
+                              .add({
+                                    targets: '.ml3 .line3',
+                                    scaleX: [0, 1],
+                                    opacity: [0.5, 1],
+                                    easing: "easeInOutExpo",
+                                    duration: 900
+                              }).add({
+                                    targets: '.ml3 .letter3',
+                                    opacity: [0, 1],
+                                    translateX: [40, 0],
+                                    translateZ: 0,
+                                    scaleX: [0.3, 1],
+                                    easing: "easeOutExpo",
+                                    duration: 800,
+                                    offset: '-=600',
+                                    delay: function (el, i) {
+                                          return 150 + 25 * i;
+                                    }
+                              }).add({
+                                    targets: '.ml3',
+                                    opacity: 0,
+                                    duration: 1000,
+                                    easing: "easeOutExpo",
+                                    delay: 1000
+                              });
+                  </script>
+
+                  <style>
+                        .ml3 {
+                              font-weight: 200;
+                        }
+
+                        .ml3 .text-wrapper {
+                              position: relative;
+                              display: inline-block;
+                              padding-top: 0.1em;
+                              padding-right: 0.05em;
+                              padding-bottom: 0.15em;
+                        }
+
+                        .ml3 .line3 {
+                              opacity: 0;
+                              position: absolute;
+                              left: 0;
+                              height: 2px;
+                              width: 100%;
+                              background-color: #fff;
+                              transform-origin: 100% 100%;
+                              bottom: 0;
+                        }
+
+                        .ml3 .letter3 {
+                              display: inline-block;
+                              line-height: 1em;
+                        }
+                  </style>
+            </div>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #003 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
