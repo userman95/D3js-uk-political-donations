@@ -69,20 +69,28 @@
             participantsElement.appendChild(newParticipant);
         }
 
-        //request data
         var xhReq = new XMLHttpRequest();
-        var page = 1, participantsJsonObject = [];
+        var page = 1, per_page = 100;
+        var participantsJsonObject = [];
         while (true) {
-            xhReq.open("GET", "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors?page=" + page, false);
+            //request data
+            xhReq.open("GET", "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors?page=" + page + "&per_page=" + per_page, false);
             xhReq.send(null);
 
             var data_lst = JSON.parse(xhReq.responseText);
-            if (data_lst.length === 0) {
+            var data_lst_len = data_lst.length;
+            if (data_lst_len === 0) {
                 break;
             }
             else {
                 participantsJsonObject = participantsJsonObject.concat(data_lst);
-                page++;
+
+                if (data_lst_len != per_page) {
+                    break;
+                }
+                else {
+                    page++;
+                }
             }
         }
 
