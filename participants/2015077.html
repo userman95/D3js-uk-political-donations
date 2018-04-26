@@ -22,12 +22,6 @@
     <div id="participants"></div>
 
     <script>
-        //request data
-        var xhReq = new XMLHttpRequest();
-        xhReq.open("GET", "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors", false);
-        xhReq.send(null);
-        var participantsJsonObject = JSON.parse(xhReq.responseText);
-
         function appendParticipantToHtml(participant) {
             var participantsElement = document.getElementById("participants");
 
@@ -73,6 +67,23 @@
             newParticipant.appendChild(participantImg);
             newParticipant.appendChild(participantP);
             participantsElement.appendChild(newParticipant);
+        }
+
+        //request data
+        var xhReq = new XMLHttpRequest();
+        var page = 1, participantsJsonObject = [];
+        while (true) {
+            xhReq.open("GET", "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors?page=" + page, false);
+            xhReq.send(null);
+
+            var data_lst = JSON.parse(xhReq.responseText);
+            if (data_lst.length === 0) {
+                break;
+            }
+            else {
+                participantsJsonObject = participantsJsonObject.concat(data_lst);
+                page++;
+            }
         }
 
         for (var i = 0; i < participantsJsonObject.length; i++) {
