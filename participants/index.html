@@ -437,10 +437,71 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #025 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #025&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+<div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+      <h4>
+        <span>&nbsp;</span>
+        <img src="https://avatars0.githubusercontent.com/u/22666781?s=400&v=4" height="42" width="42">  
+        <span class="m25"><span class="letters">&nbsp;p15theo2&nbsp;</span></span>
+      </h4>
   </div>
+  
+  <script>
+  $('.m25 .letters').each(function(){
+    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+  });
+   
+  anime.timeline({loop: true}) 
+  .add({
+    targets: '.m25 .letter',
+    translateY: ["1.5em", -1],
+    translateX: ["0em", 0],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 100,
+    delay: function(el, i) {
+      return 300 * i
+    }
+    }).add({
+    targets: '.m25 .letter',
+    translateY: ["-1em", -2],
+    translateX: ["0em", 0],
+    translateZ: 0,
+    opacity: 0,
+    duration: 100,
+    easing: "easeOutExpo",
+    delay: function(el, i) {
+    return 300 * i
+    }
+  }).add({
+    targets: '.m25',
+    opacity: 0,
+    duration: 400,
+    easing: "easeOutExpo",
+    delay: 1000
+  });     
+  </script>
+  <style>
+     .m25 {
+       position: relative;
+       font-weight: 900;
+     }
+     .m25 .text-wrapper {
+       position: relative;
+       display: inline-block;
+       padding-top: 0.2em;
+       padding-right: 0.05em;
+       padding-bottom: 0.1em;
+       overflow: hidden;
+    
+     }
+     .m25 .letter {
+       transform-origin: 30 100%;
+       display: inline-block;
+       line-height: 1em;
+       letter-spacing: 2px;
+     }
+    
+  </style>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #025 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
