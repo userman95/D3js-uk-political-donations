@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2015077</title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        div#participants {
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> participants </h1>
+
+    <div id="participants"></div>
+
+    <script>
+        function appendParticipantToHtml(participant) {
+            var participantsElement = document.getElementById("participants");
+
+            var newParticipant = document.createElement("DIV");
+            newParticipant.id = participant.login;
+            newParticipant.style.display = "inline-flex";
+            newParticipant.style.width = "auto";
+            newParticipant.style.height = "auto";
+            newParticipant.style.margin = "10px";
+            newParticipant.style.padding = "10px";
+            newParticipant.style.cursor = "pointer";
+            newParticipant.style.border = "2px solid black";
+            newParticipant.style.borderRadius = "5px";
+            newParticipant.style.backgroundColor = "lightblue";
+            newParticipant.onclick = function () {
+                window.open(participant.html_url);
+            };
+            newParticipant.onmouseover = function () {
+                newParticipant.style.transform = "scale(1.1)";
+            };
+            newParticipant.onmouseout = function () {
+                newParticipant.style.transform = "scale(1)";
+            };
+
+            var participantImg = new Image(50, 50)
+            participantImg.id = participant.login + "-img";
+            participantImg.src = participant.avatar_url;
+            participantImg.style.marginRight = "10px";
+            participantImg.style.padding = "0";
+            participantImg.style.border = "2px solid black";
+
+            var participantP = document.createElement("P");
+            participantP.id = participant.login + "-p";
+            participantP.style.width = "auto";
+            participantP.style.height = "auto";
+            participantP.style.left = "60px";
+            participantP.style.margin = "0";
+            participantP.style.padding = "5px";
+            participantP.style.border = "2px solid black";
+            participantP.style.backgroundColor = "white";
+            participantP.innerHTML = "<b>Name:</b> " + participant.login + " </br> <b>contributions:</b> " + participant.contributions;
+
+            newParticipant.appendChild(participantImg);
+            newParticipant.appendChild(participantP);
+            participantsElement.appendChild(newParticipant);
+        }
+
+        var xhReq = new XMLHttpRequest();
+        var page = 1, per_page = 100;
+        var participantsJsonObject = [];
+        while (true) {
+            //request data
+            xhReq.open("GET", "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors?page=" + page + "&per_page=" + per_page, false);
+            xhReq.send(null);
+
+            var data_lst = JSON.parse(xhReq.responseText);
+            var data_lst_len = data_lst.length;
+            if (data_lst_len === 0) {
+                break;
+            }
+            else {
+                participantsJsonObject = participantsJsonObject.concat(data_lst);
+
+                if (data_lst_len != per_page) {
+                    break;
+                }
+                else {
+                    page++;
+                }
+            }
+        }
+
+        for (var i = 0; i < participantsJsonObject.length; i++) {
+            appendParticipantToHtml(participantsJsonObject[i]);
+        }
+    </script>
+</body>
+
+</html>
