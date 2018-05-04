@@ -46,23 +46,6 @@ window.onload = function(){
 
 	  	++pageNum;
 	  }
-
-
-  //  fetch(conUrl + "1")
-  // .then((resp) => resp.json()) // Transform the data into json
-  // .then(function(data) {
-  // 		console.log("data", data);
-	 //    for(var c=0; c<data.length;c++){
-
-	 //    	var id = "con" + c;
-	 //    	var classList = ["container2"];
-	 //    	var bg = "white";
-	 //    	create_div(id,data[c]["avatar_url"], [data[c]["login"], data[c]["contributions"]]);
-	 //    }
-	 //    pageNum++;
-  //   });
-
-
   }
 
 
@@ -94,28 +77,6 @@ function create_div(imgSrc, textList, githubUrl){
 	document.getElementById("main").appendChild(div);
 }
 
-function create_img(imgSrc, w, h, alt, id){
-    var x = document.createElement("IMG");
-    x.setAttribute("id", id);
-    x.setAttribute("src", imgSrc);
-    x.setAttribute("width", w);
-    x.setAttribute("height", h);
-    x.setAttribute("alt", alt);
-    var element = document.getElementById(id);
-    if(element === null){console.log("IMAGE -> NULL"); return;}
-    element.appendChild(x);
-}
-
-function create_p(text, index){
-	var id = "con" + index;
-	console.log(id);
-	var p = document.createElement("p");
-	var node = document.createTextNode(text);
-	p.appendChild(node);
-	var element = document.getElementById(id);
-	if(element === null){console.log('p -> null'); return;}
-	element.appendChild(p);
-}
 </script>
 
 </head>
