@@ -126,10 +126,61 @@ ml.timelines["ml0"] = anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #002 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #002&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
-  </div>
+  
+      <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: 270px; float: left; margin: 10px 10px 10px 10px;">
+                  <h4>
+                        <span>&nbsp;</span>
+                        <img src="https://avatars3.githubusercontent.com/u/22703561?s=400&v=4" height="42"
+                              width="42">
+
+                        <span class="ml16">
+                          P15GithubStudent 
+                        </span>
+                  </h4>
+
+                  <script>
+                                            // Wrap every letter in a span
+                        $('.ml16').each(function(){
+                          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+                        });
+
+                        anime.timeline({loop: true})
+                          .add({
+                            targets: '.ml16 .letter',
+                            translateY: [-100,0],
+                            easing: "easeOutExpo",
+                            duration: 1400,
+                            delay: function(el, i) {
+                              return 30 * i;
+                            }
+                          }).add({
+                            targets: '.ml16',
+                            opacity: 0,
+                            duration: 1000,
+                            easing: "easeOutExpo",
+                            delay: 1000
+                          });
+                      </script>
+
+                  <style>
+                       .ml16 {
+                          color: #402d2d;
+                          padding: 40px 0;
+                          /*font-weight: 800;*/
+                          font-size: 1em;
+                          text-transform: uppercase;
+                          /*letter-spacing: 0.2em;*/
+                          overflow: hidden;
+                        }
+
+                            .ml16 .letter {
+                                display: inline-block;
+                               /* line-height: 1em;*/
+                          }
+                          
+                  </style>
+            </div>
+    
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #002 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
