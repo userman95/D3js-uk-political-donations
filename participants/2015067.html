@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Repository's Statistics</title>
+  <style type="text/css">
+  		body{
+  				background-color: #ddf9d6;
+  		}
+  		.container2{
+  			border: width: fit-content; float: left; margin: 10px 10px 10px 10px;
+  			background-color: grey;
+  		}
+
+  </style>
+  <script>
+	var profileUrl = "https://api.github.com/users/";
+	var userName = "ioniodi";
+	var url = profileUrl + userName + "/D3js-uk-political-donations";
+	var conUrl = "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors?page=";
+	//https://api.github.com/users/P15GitHubStudent/repos
+	var pageNum = 0;
+
+window.onload = function(){
+
+	 var xhReq = new XMLHttpRequest();
+
+	 console.log(reqJson(conUrl + pageNum, xhReq));
+
+	  while(true){
+
+	  	var data = reqJson(conUrl + pageNum, xhReq);
+	  	var dataLength = data.length;
+
+	  	if(dataLength > 0 ){
+
+	  	   for(var c=0; c<data.length;c++){
+	    	create_div(data[c]["avatar_url"], [data[c]["login"], data[c]["contributions"]],data[c]["html_url"]);
+	   	  }
+    	}
+    	else{
+    		delete xhReq;
+    		xhReq = null;
+    		break;
+    	}
+
+	  	++pageNum;
+	  }
+  }
+
+
+function reqJson(url, xhObj){
+	 xhObj.open("GET", url, false);
+            xhObj.send(null);
+            return JSON.parse(xhObj.responseText);
+}
+
+
+function create_div(imgSrc, textList, githubUrl){
+	var div = document.createElement("div");
+	//div.id = id;
+	div.style.cssFloat = "left";
+	 div.onclick = function () {
+                window.open(githubUrl);
+         };
+	//div.display = "inline";
+	div.style.width = "350px";
+	div.style.height = "200px";
+	//div.style.display = "inline";
+	div.style.background = "grey";
+	div.style.color = "white";
+	div.style.border = "1px solid green";
+	console.log("TextList[0]", textList[0] +  "TextList[1]",textList[1]);
+	div.innerHTML = "<p> Contr:" + textList[0] + "</p><p>Commits :" + textList[1] + "</p><img src=" + imgSrc + " width='52' height='52'>";
+	var element = document.getElementById("main");
+	if(element === null){console.log("DIV-> NULL"); return;}
+	document.getElementById("main").appendChild(div);
+}
+
+</script>
+
+</head>
+<body>
+ <h1> Repository's Statistics </h1>
+  <div id="main">
+  </div>
+</body>
+</html>

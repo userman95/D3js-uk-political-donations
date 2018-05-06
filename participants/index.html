@@ -126,10 +126,61 @@ ml.timelines["ml0"] = anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #002 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #002&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
-  </div>
+  
+      <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: 270px; float: left; margin: 10px 10px 10px 10px;">
+                  <h4>
+                        <span>&nbsp;</span>
+                        <img src="https://avatars3.githubusercontent.com/u/22703561?s=400&v=4" height="42"
+                              width="42">
+
+                        <span class="ml16">
+                          P15GithubStudent 
+                        </span>
+                  </h4>
+
+                  <script>
+                                            // Wrap every letter in a span
+                        $('.ml16').each(function(){
+                          $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+                        });
+
+                        anime.timeline({loop: true})
+                          .add({
+                            targets: '.ml16 .letter',
+                            translateY: [-100,0],
+                            easing: "easeOutExpo",
+                            duration: 1400,
+                            delay: function(el, i) {
+                              return 30 * i;
+                            }
+                          }).add({
+                            targets: '.ml16',
+                            opacity: 0,
+                            duration: 1000,
+                            easing: "easeOutExpo",
+                            delay: 1000
+                          });
+                      </script>
+
+                  <style>
+                       .ml16 {
+                          color: #402d2d;
+                          padding: 40px 0;
+                          /*font-weight: 800;*/
+                          font-size: 1em;
+                          text-transform: uppercase;
+                          /*letter-spacing: 0.2em;*/
+                          overflow: hidden;
+                        }
+
+                            .ml16 .letter {
+                                display: inline-block;
+                               /* line-height: 1em;*/
+                          }
+                          
+                  </style>
+            </div>
+    
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #002 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -138,10 +189,86 @@ ml.timelines["ml0"] = anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #003 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #003&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
-  </div>
+  <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+                  <h4>
+                        <span>&nbsp;</span>
+                        <img src="https://avatars3.githubusercontent.com/u/22676085?s=400&u=22e9562f6584131db9cb09ad4578a03b86b4b433&v=4" height="42"
+                              width="42">
+
+                        <span class="ml3">
+                              <span class="text-wrapper">
+                                    <span class="letters3">DimitrisTria</span>
+                                    <span class="line3"></span>
+                              </span>
+                        </span>
+                  </h4>
+
+                  <script>
+                        var ml3 = { timelines: {} };
+
+                        // Wrap every letter in a span
+                        $('.ml3 .letters3').each(function () {
+                              $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter3'>$&</span>"));
+                        });
+
+                        anime.timeline({ loop: true })
+                              .add({
+                                    targets: '.ml3 .line3',
+                                    scaleX: [0, 1],
+                                    opacity: [0.5, 1],
+                                    easing: "easeInOutExpo",
+                                    duration: 900
+                              }).add({
+                                    targets: '.ml3 .letter3',
+                                    opacity: [0, 1],
+                                    translateX: [40, 0],
+                                    translateZ: 0,
+                                    scaleX: [0.3, 1],
+                                    easing: "easeOutExpo",
+                                    duration: 800,
+                                    offset: '-=600',
+                                    delay: function (el, i) {
+                                          return 150 + 25 * i;
+                                    }
+                              }).add({
+                                    targets: '.ml3',
+                                    opacity: 0,
+                                    duration: 1000,
+                                    easing: "easeOutExpo",
+                                    delay: 1000
+                              });
+                  </script>
+
+                  <style>
+                        .ml3 {
+                              font-weight: 200;
+                        }
+
+                        .ml3 .text-wrapper {
+                              position: relative;
+                              display: inline-block;
+                              padding-top: 0.1em;
+                              padding-right: 0.05em;
+                              padding-bottom: 0.15em;
+                        }
+
+                        .ml3 .line3 {
+                              opacity: 0;
+                              position: absolute;
+                              left: 0;
+                              height: 2px;
+                              width: 100%;
+                              background-color: #fff;
+                              transform-origin: 100% 100%;
+                              bottom: 0;
+                        }
+
+                        .ml3 .letter3 {
+                              display: inline-block;
+                              line-height: 1em;
+                        }
+                  </style>
+            </div>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #003 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -257,10 +384,30 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #010 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #010&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+  <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+    <h4>
+      <span>&nbsp;</span>
+      <img src="https://avatars0.githubusercontent.com/u/22058577?s=400&u=3a84ed5ca767e69456e807a2ff3a80451f868ad0&v=4" height="42" width="42">  
+      <span class="rainbow">Dimitris-Stamatis</span>
+    </h4>
   </div>
+  <style>
+    .rainbow{
+    	animation:rainbow 1s infinite;
+    }
+  @keyframes rainbow{
+	  0%{		color: #FF0000;	}
+	  10%{	color: #E2571E;	}
+	  20%{	color: #FF7F00;	}
+    30%{	color: #FFFF00;	}
+    40%{	color: #00FF00;	}
+	  50%{	color: #96bf33;	}
+	  60%{	color:#0000FF;	}
+    70%{	color:#4B0082;	}
+    99%{	color:#8B00FF;	}
+	  100%{	color: #ffffff;	}
+  }
+  </style>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #010 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -269,10 +416,41 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #011 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #011&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
-  </div>
+  <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+      <h4>
+        <span>&nbsp;</span>
+        <img src="https://avatars1.githubusercontent.com/u/22656813?s=460&v=4" height="42" width="42">  
+        <span class="ml3">&nbsp;andreanastil&nbsp;</span>
+      </h4>
+  </div> 
+  <script>
+    $('.ml3').each(function(){
+    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    });
+
+    anime.timeline({loop: true})
+    .add({
+        targets: '.ml3 .letter',
+        opacity: [0,1],
+        easing: "easeInOutQuad",
+        duration: 2250,
+        delay: function(el, i) {
+          return 150 * (i+1)
+        }
+     }).add({
+        targets: '.ml3',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+     });
+
+  </script>
+  <style>
+     .ml3 {
+        font-weight: 900;
+     }
+  </style> 
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #011 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -293,10 +471,60 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #013 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #013&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+  <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+    <h4>
+      <img src="https://avatars0.githubusercontent.com/u/18286552?s=460&v=4" height="42" width="42">
+      <span class="ml9">
+        <span class="text-wrapper">
+          <span class="letters">AsteriosP</span>
+        </span>
+      </span>
+    </h4>
   </div>
+  <style>
+    .ml9 {
+      position: relative;
+      font-weight: 200;
+      font-size: 1.2em;
+    }
+
+    .ml9 .text-wrapper {
+      position: relative;
+      display: inline-block;
+      padding-top: 0.2em;
+      padding-right: 0.05em;
+      padding-bottom: 0.1em;
+      overflow: hidden;
+    }
+
+    .ml9 .letter {
+      transform-origin: 50% 100%;
+      display: inline-block;
+      line-height: 1em;
+    }
+  </style>
+  <script>
+    $('.ml9 .letters').each(function () {
+      $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    });
+
+    anime.timeline({ loop: true })
+      .add({
+        targets: '.ml9 .letter',
+        scale: [0, 1],
+        duration: 1500,
+        elasticity: 600,
+        delay: function (el, i) {
+          return 45 * (i + 1)
+        }
+      }).add({
+        targets: '.ml9',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  </script>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #013 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -305,10 +533,57 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #014 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #014&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+    <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+     <h4>
+        <span>&nbsp;</span>
+        <img src="https://avatars2.githubusercontent.com/u/22655733?v=4" height="42" width="42">  
+        <span class="ml7"><span class="letters">&nbsp;nefelinikiforou&nbsp;</span></span>
+     </h4>
   </div>
+  <script>
+$('.ml7 .letters').each(function(){
+  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+});
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml7 .letter',
+    translateY: ["1.1em", 0],
+    translateX: ["0.55em", 0],
+    translateZ: 0,
+    rotateZ: [180, 0],
+    duration: 750,
+    easing: "easeOutExpo",
+    delay: function(el, i) {
+      return 50 * i;
+    }
+  }).add({
+    targets: '.ml7',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+  </script>  
+  <style>
+     .ml7 {
+       position: relative;
+       font-weight: 900;
+     }
+     .ml7 .text-wrapper {
+       position: relative;
+       display: inline-block;
+       padding-top: 0.2em;
+       padding-right: 0.05em;
+       padding-bottom: 0.1em;
+       overflow: hidden;
+     }
+     .ml7 .letter {
+       transform-origin: 0 100%;
+       display: inline-block;
+       line-height: 1em;
+     }
+    
+  </style>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #014 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -317,10 +592,38 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #015 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #015&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+<div style="border: 2px solid; border-radius: 5px; background-color: #4267B2; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+      <h4>
+        <span>&nbsp;</span>
+        <img src="https://avatars2.githubusercontent.com/u/22681573?s=400&v=4" height="42" width="42">  
+        <span class="ml1"><span class="letters">&nbsp;p15syme&nbsp;</span></span>
+      </h4>
   </div>
+  
+  <script>
+  // Wrap every letter in a span
+  $('.ml1 .letters').each(function(){
+    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+  });
+   
+   anime.timeline({loop: true}) 
+    .add({
+    targets: '.ml1 .letters',
+    scale: [0,1],
+    opacity: [0,1],
+    easing: "easeOutElastic",
+    duration: 2000,
+    delay: function(el, i, l) {
+      return 750 * (i+2);
+    }
+  }).add({
+    targets: '.ml1',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeInOutQuint",
+    delay: 1000
+  });    
+  </script>   
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #015 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -341,10 +644,77 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #017 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #017&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+
+     <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+        <h4 class="ml4">
+             <span>&nbsp;</span>
+             <img src="https://avatars1.githubusercontent.com/u/22648584?s=460&v=4" height="42" width="42">  
+             <span class="letters letters-1">Tasoulas</span>
+             <span class="letters letters-2">Theofanis</span>
+        </h4>
   </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    
+  <script>
+  var ml4 = {};
+ml4.opacityIn = [0,1];
+ml4.scaleIn = [0.2, 1];
+ml4.scaleOut = 3;
+ml4.durationIn = 800;
+ml4.durationOut = 600;
+ml4.delay = 500;
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml4 .letters-1',
+    opacity: ml4.opacityIn,
+    scale: ml4.scaleIn,
+    duration: ml4.durationIn
+  }).add({
+    targets: '.ml4 .letters-1',
+    opacity: 0,
+    scale: ml4.scaleOut,
+    duration: ml4.durationOut,
+    easing: "easeInExpo",
+    delay: ml4.delay
+  }).add({
+    targets: '.ml4 .letters-2',
+    opacity: ml4.opacityIn,
+    scale: ml4.scaleIn,
+    duration: ml4.durationIn
+  }).add({
+    targets: '.ml4 .letters-2',
+    opacity: 0,
+    scale: ml4.scaleOut,
+    duration: ml4.durationOut,
+    easing: "easeInExpo",
+    delay: ml4.delay
+  });
+    
+  </script>  
+    
+    <style>
+      .ml4 {
+  position: relative;
+  font-weight: 900;
+  font-size: 1em;
+  display: inline-block;
+}
+.ml4 .letters {
+  position: relative;
+  margin: auto;
+  display: inline-block;
+  left: 0;
+  bot: 1em;
+  right: 0;
+  opacity: 0; 
+}
+    </style>
+
+    
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #017 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -353,10 +723,85 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #018 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #018&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
-  </div>
+  <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+      <span>&nbsp;</span>
+      <img src="https://avatars0.githubusercontent.com/u/22659306?s=400&v=4" height="42" width="42">
+	<h1 class="ml1">
+		<span class="text-wrapper">
+    		<span class="line line1"></span>
+    		<span class="letters">p15zach1</span>
+    		<span class="line line2"></span>
+	</span>
+	</h1>
+</div>
+	
+<style>
+.ml1 {
+  font-weight: 900;
+  font-size: 3.5em;
+}
+
+.ml1 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.ml1 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml1 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  transform-origin: 0 0;
+}
+
+.ml1 .line1 { top: 0; }
+.ml1 .line2 { bottom: 0; }
+</style>
+	
+<script>
+$('.ml1 .letters').each(function(){
+  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+});
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml1 .letter',
+    scale: [0.3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: function(el, i) {
+      return 70 * (i+1)
+    }
+  }).add({
+    targets: '.ml1 .line',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700,
+    offset: '-=875',
+    delay: function(el, i, l) {
+      return 80 * (l - i);
+    }
+  }).add({
+    targets: '.ml1',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+</script>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #018 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -365,10 +810,59 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #019 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #019&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
-  </div>  
+  <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+      <h4 class="ml15">
+        <span>&nbsp;</span>
+        <img src="https://avatars3.githubusercontent.com/u/22654144?s=40&v=4" height="42" width="42">  
+        <span class="word">petros</span>
+	<span class="word">1997</span>
+      </h4>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  
+  <script>
+  
+var ml15 = {};
+ml15.opacityIn = [0,1];
+ml15.scaleIn = [0.2, 1];
+ml15.scaleOut = 3;
+ml15.durationIn = 800;
+ml15.durationOut = 600;
+ml15.delay = 500;
+
+   
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml15 .word',
+    scale: [14,1],
+    opacity: [0,1],
+    easing: "easeOutCirc",
+    duration: 800,
+    delay: function(el, i) {
+      return 800 * i;
+    }
+  }).add({
+    targets: '.ml15',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+  </script>  
+  
+  <style>
+  .ml15 {
+  font-weight: 800;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.ml15 .word {
+  display: inline-block;
+  line-height: 0.05em;
+}</style>  
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #019 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -377,10 +871,57 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #020 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #020&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
-  </div>
+  <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+         <h4>
+
+        <span>&nbsp;</span>
+
+        <img src="https://avatars0.githubusercontent.com/u/22655690?s=400v=4" height="42" width="42">  
+
+        <span class="ml2"><span class="letter">&nbsp;p15mago&nbsp;</span></span>
+
+      </h4>
+
+  </div>    
+
+  <style>
+
+  .ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+  </style>
+
+  <script>
+
+  $('.ml2').each(function(){
+
+    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+
+  });
+
+  anime.timeline({loop: true})
+
+  .add({
+    targets: '.ml2 .letter',
+    scale: [4,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 950,
+    delay: function(el, i) {
+      return 70*i;
+    }
+  }).add({
+    targets: '.ml2',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+</script>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #020 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -413,10 +954,51 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #023 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #023&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
-  </div>
+ <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+      <h4>
+        <span>&nbsp; </span>
+        <img src="https://avatars3.githubusercontent.com/u/25747802?s=400&u=80278c313b924bb03c0eee4cddffb39b9f5ae02b&v=4" height="42" width="42">  
+        <span class="m23"><span class="letters">&nbsp;p12tzia&nbsp;</span></span>
+      </h4>
+ </div>
+ <script>
+  $('.m23 .letters').each(function(){
+    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+  });
+  
+   anime.timeline({loop:true, direction:'alternate', autoplay:true}) 
+  .add({
+    targets: '.m23 .letter',
+    translateY: [
+       {value: '0.0em'},
+       {value: '1.2em'},
+       {value: '-2.0em'},
+     ],
+    scale: [1,1.1],
+    opacity:[0.4,1],
+    easing: "easeInSine",
+    duration: function(target, index, targetCount) {
+       return 1000 + index * 200;
+    },
+    delay: function(target, index, targetCount) {
+       return (targetCount - index) * 1100;
+    }
+ });
+ </script>
+ <style>
+     
+.m23 .letter {
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        line-height: 1cm;
+        font-size: 20px;
+        font-weight:bold;
+        font-family:Courier New;
+	display: inline-block;
+	position:relative;
+   }
+     
+  </style>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #023 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -425,10 +1007,44 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #024 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #024&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+   <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+        <h4>
+      <span>&nbsp;</span>
+                        <img src="https://avatars3.githubusercontent.com/u/22643762?s=400&v=4" height="42"
+                              width="42">
+     
+ <span class="ml9">
+   <span class="letters">&nbsp;MariaChGeo&nbsp;</span></span>
+      </h4>
   </div>
+
+  <script>
+    var ml9 = { timelines: {} };
+
+  // Wrap every letter in a span
+$('.ml9 .letters').each(function(){
+  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+});
+    
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml9 .letter',
+    scale: [0, 1],
+    duration: 1500,
+    elasticity: 600,
+    delay: function(el, i) {
+      return 45 * (i+1)
+    }
+  }).add({
+    targets: '.ml9',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+  </script>
+ 
+  
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #024 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -437,10 +1053,71 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #025 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #025&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+<div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+      <h4>
+        <span>&nbsp;</span>
+        <img src="https://avatars0.githubusercontent.com/u/22666781?s=400&v=4" height="42" width="42">  
+        <span class="m25"><span class="letters">&nbsp;p15theo2&nbsp;</span></span>
+      </h4>
   </div>
+  
+  <script>
+  $('.m25 .letters').each(function(){
+    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+  });
+   
+  anime.timeline({loop: true}) 
+  .add({
+    targets: '.m25 .letter',
+    translateY: ["1.5em", -1],
+    translateX: ["0em", 0],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 100,
+    delay: function(el, i) {
+      return 300 * i
+    }
+    }).add({
+    targets: '.m25 .letter',
+    translateY: ["-1em", -2],
+    translateX: ["0em", 0],
+    translateZ: 0,
+    opacity: 0,
+    duration: 100,
+    easing: "easeOutExpo",
+    delay: function(el, i) {
+    return 300 * i
+    }
+  }).add({
+    targets: '.m25',
+    opacity: 0,
+    duration: 400,
+    easing: "easeOutExpo",
+    delay: 1000
+  });     
+  </script>
+  <style>
+     .m25 {
+       position: relative;
+       font-weight: 900;
+     }
+     .m25 .text-wrapper {
+       position: relative;
+       display: inline-block;
+       padding-top: 0.2em;
+       padding-right: 0.05em;
+       padding-bottom: 0.1em;
+       overflow: hidden;
+    
+     }
+     .m25 .letter {
+       transform-origin: 30 100%;
+       display: inline-block;
+       line-height: 1em;
+       letter-spacing: 2px;
+     }
+    
+  </style>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #025 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -497,10 +1174,50 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #030 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #030&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+    <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+    <h4>
+      <span>&nbsp;</span>
+      <img src="https://avatars2.githubusercontent.com/u/22667836?s=400&v=4" height="42" width="42">  
+      <span class="raincolors">GIANNIS-AGGELIS</span>
+    </h4>
   </div>
+
+  <style>
+  .raincolors {
+  
+  font: bold 1em / 1 Verdana, Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  
+  background: linear-gradient(to right,
+                             #f00 0%,
+                             #f80 14.28%,
+                             #dd0 28.56%,
+                             #BCDD00 42.85%,
+                             #0dd 57.14%,
+                             #00f 71.42%,
+                             #270A27 85.71%,
+                             #f00 100%) 0% center / 150% auto;
+  
+          background-clip: text;
+  -webkit-background-clip: text;
+  
+          text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  
+  animation: raincolors 2s linear infinite;
+}
+
+
+@keyframes raincolors {
+  to { background-position-x: 1000%; }
+}
+
+
+
+body {
+  text-align: center;
+}
+  </style>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #030 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
@@ -678,10 +1395,55 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #045 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #045&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+   <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+      <h4 style = "color:#9b368a;">
+        <span>&nbsp;</span>
+        <img src="https://avatars0.githubusercontent.com/u/22661913?s=400&v=4" height="42" width="42">  
+        <span class="ml45"><span class="letters">&nbsp; p15kara3 &nbsp;</span></span>
+      </h4>
   </div>
+  
+  <style>
+  
+  .ml45 {  
+  text-transform: uppercase;
+  font-weight: 50;
+}
+
+.ml45 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+  </style>
+  
+  <script>
+  // Wrap every letter in a span
+$('.ml45').each(function(){
+  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+});
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml45 .letter',
+    translateY: [100,0],
+    translateZ: 0,
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: function(el, i) {
+      return 300 + 30 * i;
+    }
+  }).add({
+    targets: '.ml45 .letter',
+    translateY: [0,-100],
+    opacity: [1,0],
+    easing: "easeInExpo",
+    duration: 1200,
+    delay: function(el, i) {
+      return 100 + 30 * i;
+    }
+  });
+  </script>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #045 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
