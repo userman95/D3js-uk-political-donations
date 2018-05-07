@@ -345,6 +345,11 @@ function mouseover(d, i) {
 		.html(infoBox)
 			.style("display","block");
 	
+	var img = document.createElement("img");
+  	img.src = imageFile;
+  	img.width = 42;
+  	img.height = 42;
+	document.body.appendChild(img);
 	
 	}
 
