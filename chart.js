@@ -345,6 +345,7 @@ function mouseover(d, i) {
 		.html(infoBox)
 			.style("display","block");
 	
+	
 	}
 
 function mouseout() {
