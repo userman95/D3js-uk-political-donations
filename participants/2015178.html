@@ -32,9 +32,9 @@
 	<script type="text/javascript">
 		function start(){
 			
-			var url  = "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors?per_page=200";
+			var direpo  = "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors?per_page=200";
 			var req = new XMLHttpRequest();
-			req.open("get", url, false);
+			req.open("get", direpo, false);
 			req.send();
 			var retrieve = JSON.parse(req.responseText); 
 			console.log(retrieve);
