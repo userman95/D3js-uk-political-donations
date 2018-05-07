@@ -240,34 +240,34 @@
       <h4>
         <span>&nbsp;</span>
         <img src="https://avatars2.githubusercontent.com/u/22681573?s=400&v=4" height="42" width="42">  
-        <span class="ml1"><span class="letters">&nbsp;p15syme&nbsp;</span></span>
+        <span class="ml1"><span class="line">&nbsp;p15syme&nbsp;</span></span>
       </h4>
   </div>
   
   <script>
   // Wrap every letter in a span
-  $('.ml1 .letters').each(function(){
+  $('.ml1 .line').each(function(){
     $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
   });
    
    anime.timeline({loop: true}) 
     .add({
-    targets: '.ml1 .letters',
+    targets: '.ml1 .line',
     scale: [0,1],
     opacity: [0,1],
-    easing: "easeOutElastic",
-    duration: 2000,
+    easing: "easeInElastic",
+    duration: 2500,
     delay: function(el, i, l) {
-      return 750 * (i+2);
+      return 1000 * (i+2);
     }
   }).add({
-    targets: '.ml1',
+    targets: '.ml1 .line',
     opacity: 0,
-    duration: 1000,
-    easing: "easeInOutQuint",
-    delay: 1000
+    duration: 2250,
+    easing: "easeInCubic",
+    delay: 1100
   });    
-  </script>   
+  </script>  
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #015 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
