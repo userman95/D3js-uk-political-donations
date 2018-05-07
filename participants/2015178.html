@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Insights</title>
+</head>
+<body>
+	<h1> Insight ioniodi Statistics </h1>
+	<div id = "mydiv"></div>
+	<style type="text/css">
+		body {
+			background: rgba(79, 66, 246);
+		    	font-family:'Bree Serif', 'Open Sans', slab-serif;
+		}
+		h1{text-align: center;}
+		.student {
+			text-align: center;
+			background: rgba(233, 66, 79, 0.4);
+			margin-right: 5px;
+			margin-bottom: 5px;
+			width: 200px;
+			height: 220px; 
+			display: inline-block;
+			border-width: 2px;
+			border-style: solid;
+			border-color: black; 
+			border-radius: 5px;
+		}
+		.avatar{
+		    display: block;
+		    margin-left: auto;
+		    margin-right: auto;
+		}	
+	</style>
+
+	<script type="text/javascript">
+		function start(){
+			
+			var url  = "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors?per_page=200";
+			var req = new XMLHttpRequest();
+			req.open("get", url, false);
+			req.send();
+			var retrieve = JSON.parse(req.responseText); 
+			console.log(retrieve);
+			for (var i =0;i<retrieve.length;i++){
+				append(retrieve[i]);
+			}
+			function append(retrieve) {
+				var div = document.createElement("div");
+				var image = new Image(150, 150);
+				div.className  = "student";
+				image.className = "avatar"
+				image.src = retrieve.avatar_url;
+	         	div.appendChild(image);	
+				div.innerHTML += "<p><b> "+retrieve.login + "</b></br> Contributions: "+retrieve.contributions +" </p>";
+	         	document.getElementById("mydiv").appendChild(div);    		
+				
+			}
+		}
+		window.onload = start();
+	</script>
+
+</body>
+</html>
