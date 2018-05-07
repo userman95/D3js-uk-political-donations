@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>2015107</title>
+
+    <style>
+        h1 {
+
+            text-align: center;
+        }
+
+        body {
+            background: #ffcc99;
+            font-family: "Arial", Arial, sans-serif;
+
+
+        }
+
+        div#contributions {
+            width: auto;
+            height: auto;
+        }
+
+        .contributor{
+
+            display: inline-block;
+            text-align: center;
+            border-width: 3.5px;
+      			border-style: solid;
+      			border-color: #008000;
+      			border-radius: 10px;
+            width:  200px;
+            height: 280px;
+            margin: 15px;
+            padding: 15px;
+            background-color: #9400D3;
+            cursor: pointer;
+
+        }
+
+        .contributorImage{
+
+            margin-right: 10px;
+            padding: 0px;
+            display: inline-block;
+
+        }
+
+        .conParagraph{
+
+
+            margin: 0px;
+            padding: 10px;
+            font-size: 1.089em;
+        }
+
+        divline{
+
+          margin: 0px;
+          padding: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1> Contributors of &nbsp;  "ioniodi/D3js-uk-political-donations" </h1>
+
+    <div id="contributions"></div>
+
+    <script>
+        var xhttpReq = new XMLHttpRequest(); //creates an XMLHttpRequest object
+        var page = 1;
+        var contributorsPerPage = 100;
+        var urlAPI = "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors"; // the url in which the http request will be sent
+        var contributorsJsonList = []; //list for storing the prospective data from the API
+        while (true){
+            xhttpReq.open("GET", "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors" + "?per_page=" + contributorsPerPage + "&page=" + page, false);  //the request that will be sent to the API is synchronous as it is indicated by the "false" argument.
+            xhttpReq.send(); //sends the request to the server
+
+            dataFromAPI = JSON.parse(xhttpReq.responseText);   //returns the response data from the API as a string
+
+            console.log(dataFromAPI.length)  //writes and displays the "dataFromAPI.length" into the browser console for debugging and check purposes as it can be seen below
+
+            if (dataFromAPI.length == 0){  //checking if the data that was retrieved from the API actually contains something
+                break;
+            }else if (dataFromAPI.length < contributorsPerPage){
+                contributorsJsonList = contributorsJsonList.concat(dataFromAPI); //combines the data from the API into a single instance while it checks if the length is exceeding the "100"
+                break;
+            }else{
+                contributorsJsonList = contributorsJsonList.concat(dataFromAPI);
+                page += 1;
+            }
+        }
+
+
+
+            contributorsJsonList.forEach(con => {          //iterates through the elements of the array one by one
+            var contributions = document.getElementById("contributions");
+
+            var contrib = document.createElement("DIV"); //creates the contributor element
+            contrib.className = "contributor";
+            contrib.onclick = function () {  //function that opens a new windows into the profile of the username that we clicked
+               window.open(con.html_url);
+            };
+
+            var contributorIm = new Image(140, 140);   //creates a new Image for each element (contributor)
+            contributorIm.src = con.avatar_url;     //takes the source url from the API for the image
+            contributorIm.className = "contributorImage";  //class for modifying the appearance of the image in the <>style</>
+
+            var contribPar = document.createElement("P");  //creates the text that will be added next to the avatar image
+            contribPar.className = "conParagraph";
+            contribPar.innerHTML =  "<p><b><i>" + con.login + "</i></b></br>" +  "<p>     with  &nbsp;  " +  con.contributions + "</p>" + "   contributions  "; //writes into an HTML element and displays the data written
+
+
+            contrib.appendChild(contributorIm);  //adds a new child node, to each element of the "contributorsJsonList" array , as the last child node
+            contrib.appendChild(contribPar);
+            contributions.appendChild(contrib);
+        });
+
+
+    </script>
+
+
+</body>
+</html>
