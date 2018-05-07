@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Insigts</title>
+</head>
+<body>
+	<h1> Insights </h1>
+	<div id = "mydiv"></div>
+	<style type="text/css">
+		body {
+		    background: rgb(238,174,202);
+		    background: radial-gradient(circle, rgba(238,174,202,0.6) 36%, rgba(148,187,233,0.6) 100%);    
+		    font-family:'Raleway', 'Open Sans', sans-serif;
+		}
+		h1{text-align: center;}
+		.user{
+			text-align: center;
+			background: rgba(255, 255, 255, 0.4);
+			margin-right: 7px;
+			margin-bottom: 7px;
+			width:200px;
+			height: 300px; 
+			display:inline-block;
+			border-width: 1px;
+			border-style: solid;
+			border-color: white; 
+			border-radius: 5px;
+		}
+		.user:hover{
+			background: rgba(255, 255, 255, 0.6);
+ 			cursor: pointer;
+		}
+		.photo{
+		    display: block;
+		    margin-left: auto;
+		    margin-right: auto;
+		}	
+	</style>
+	<script type="text/javascript">
+		function start(){	
+			var url  = "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors";
+			var req = new XMLHttpRequest();
+			req.open("get", url, false);
+			req.send();
+			var data = JSON.parse(req.responseText); 
+			console.log(data);
+			for (var i =0;i<data.length;i++){
+				appendDiv(data[i]);
+			}
+
+			function appendDiv(data) {
+				var div = document.createElement("div");
+				var image = new Image(150, 150);
+				div.className  = "user";
+				image.className = "photo"
+				div.onclick = function () {
+	                window.open(data.html_url);
+	         	};
+				image.src = data.avatar_url;
+	         	div.appendChild(image);	
+				div.innerHTML += "<p><b>"+data.login + "</b></br> Contributions: "+data.contributions +" </p>";
+	         	document.getElementById("mydiv").appendChild(div);    		
+			}
+
+
+		}
+		window.onload = start();
+	</script>
+
+</body>
+</html>
