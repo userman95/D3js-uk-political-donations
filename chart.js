@@ -344,12 +344,7 @@ function mouseover(d, i) {
     .style("top", (parseInt(d3.select(this).attr("cy") - (d.radius+150)) + offset.top) + "px")
 		.html(infoBox)
 			.style("display","block");
-	
-	var img = document.createElement("img");
-  	img.src = imageFile;
-  	img.width = 42;
-  	img.height = 42;
-	document.body.appendChild(img);
+
 	
 	}
 
