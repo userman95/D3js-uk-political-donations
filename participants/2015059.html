@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <meta content="text/html;charset=utf-8" http-equiv="Content-Type"> -->
+    <title>2015059</title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        div#commits {
+            width: auto;
+            height: auto;
+        }
+
+        .contributor{
+            display: inline-flex;
+            border: 2px solid midnightblue;
+            border-radius: 10px;
+            width: auto;
+            height: auto;
+            margin: 20px;
+            padding: 20px;
+            background-color: lightskyblue;
+            cursor: pointer;
+        }
+        
+        .conImage{
+            margin-right: 10px;
+            padding: 0px;
+        }
+
+        .conParagraph{
+            height: auto;
+            left: 70px;
+            margin: 0px;
+            padding: 10px;
+            border: 2px solid midnightblue;
+            border-radius: 5px;
+            background-color: peachpuff;
+        }
+
+        hr{
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Contributions </h1>
+
+    <div id="contributions"></div>
+
+    <script>
+        var xhReq = new XMLHttpRequest();
+        var page = 1;
+        var perPage = 100;
+        var link = "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors";
+        var contributionJson = [];
+        while (1){
+            xhReq.open("GET", "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors" + "?per_page=" + perPage + "&page=" + page, false);
+            xhReq.send(null);
+            newJsonList = JSON.parse(xhReq.responseText);
+            console.log(newJsonList.length)
+            // contributionJson = contributionJson.concat(newJsonList);
+            if (newJsonList.length == 0){
+                break;
+            }else if (newJsonList.length < perPage){
+                contributionJson = contributionJson.concat(newJsonList);
+                break;
+            }else{
+                contributionJson = contributionJson.concat(newJsonList);
+                page += 1;
+            }
+        }
+        
+        //avatar_html = "https://avatars0.githubusercontent.com/u/18286552?s=460&v=4"
+        
+        contributionJson.forEach(con => {
+            var contributions = document.getElementById("contributions");
+
+            var contrib = document.createElement("DIV");
+            contrib.className = "contributor";
+            contrib.onclick = function () {
+                window.open(con.html_url);
+            };
+            
+            var contributorIm = new Image(50, 50);
+            contributorIm.src = con.avatar_url;
+            contributorIm.className = "conImage";
+            
+            var contribPar = document.createElement("P");
+            contribPar.className = "conParagraph";
+            contribPar.innerHTML = "<b>Username:</b> " + con.login + " <hr> <b>contributions:</b> " + con.contributions;
+
+            
+            contrib.appendChild(contributorIm);
+            contrib.appendChild(contribPar);
+            contributions.appendChild(contrib);
+        });
+        // console.log(colsJson)
+        // colsJson.forEach(contributor => {
+            
+        // });
+        
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2010035</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+		#ioniodi {
+			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		#ioniodi td, #ioniodi th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+
+		#ioniodi tr:nth-child(even){background-color: #f2f2f2;}
+
+		#ioniodi tr:hover {background-color: #ddd;}
+
+		#ioniodi th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #1C2F10;
+			color: white;
+		}
+    </style>
+</head>
+
+<body>
+    <h1> Contributions of ioniodi/D3js-uk-political-donations </h1>
+
+    <div id="contributions"></div>
+
+    <script>
+        $.getJSON( "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors", function( data ) {
+		var HtmlStr = '<table id="ioniodi">';
+		HtmlStr += '<tr>';
+		HtmlStr += '<th width="10%">Id</th>';
+		HtmlStr += '<th width="20%">Image</th>';
+		HtmlStr += '<th width="20%">Name</th>';
+		HtmlStr += '<th width="50%">Contributions</th>';
+		HtmlStr += '</tr>';
+
+		//console.log(data[0].login);
+	    $("#contributions").append('Length: '+ data.length);
+	  
+                $.each(data, function(i)
+                {
+                       		HtmlStr += '<tr>';
+							HtmlStr += '<td width="10%"> <a href="' + data[i].url + '">' + data[i].id + ' </a> </td>';
+							HtmlStr += '<td width="20%"> <a href="' + data[i].url + '"> <img src="' + data[i].avatar_url + '" alt="w" height="42" width="42"></a> </td>';
+							HtmlStr += '<td width="20%">' + data[i].login + '</td>';
+							HtmlStr += '<td width="50%">' + data[i].contributions + '</td>';
+							HtmlStr += '</tr>';
+                });
+				
+				HtmlStr +='</table>';
+				$("#contributions").append(HtmlStr);
+	});
+    </script>
+
+
+</body>
+</html>
