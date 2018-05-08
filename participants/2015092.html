@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <title>2015092</title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+        div#commits {
+            width: auto;
+            height: auto;
+        }
+        .participantStyle{
+            display: inline-flex;
+            border: 4px solid black;
+            width: auto;
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            background-color: lightblue;
+            cursor: pointer;
+            -webkit-transition: all .3s ease-out;
+           -moz-transition: all .3s ease-out;
+           -o-transition: all .3s ease-out;
+           transition: all .3s ease-out;
+        }        
+        .partImage{
+            margin-right: 10px;
+            padding: 0px;
+            -webkit-transition: all .3s ease-out;
+           -moz-transition: all .3s ease-out;
+           -o-transition: all .3s ease-out;
+           transition: all .3s ease-out;
+        }
+        .partParagraph{
+            height: auto;
+            left: 50px;
+            margin: 10px;
+            border: 2px red;
+            border-radius: 5px;
+            -webkit-transition: all .3s ease-out;
+           -moz-transition: all .3s ease-out;
+           -o-transition: all .3s ease-out;
+           transition: all .3s ease-out;
+        }
+        .participantStyle:hover{
+            -moz-transform: scale(1.3);
+           -webkit-transform: scale(1.3);
+           -o-transform: scale(1.3);
+           transform: scale(1.3);
+           -ms-transform: scale(1.3);
+        filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+           M11=2, M12=-0, M21=0, M22=2);
+        }        
+        .partImage:hover{
+            -moz-transform: scale(1.3);
+           -webkit-transform: scale(1.3);
+           -o-transform: scale(1.3);
+           transform: scale(1.3);
+           -ms-transform: scale(1.3);
+        filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+           M11=2, M12=-0, M21=0, M22=2);
+        }
+        .partParagraph:hover{
+           -moz-transform: scale(1.3);
+           -webkit-transform: scale(1.3);
+           -o-transform: scale(1.3);
+           transform: scale(1.3);
+           -ms-transform: scale(1.3);
+        filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+           M11=2, M12=-0, M21=0, M22=2);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center"> <u> Participants </u> </h1>
+
+    <div id="participants"></div>
+
+    <script>
+        var xhReq = new XMLHttpRequest();
+        var page = 1;
+        var perPage = 100;
+        var link = "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors";
+        var participantJson = [];
+        while (1){
+            xhReq.open("GET", "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors" + "?per_page=" + perPage + "&page=" + page, false);
+            xhReq.send(null);
+            newJsonList = JSON.parse(xhReq.responseText);
+            console.log(newJsonList.length)
+            //participantJson = participantJson.concat(newJsonList);
+            if (newJsonList.length == 0){
+                break;
+            }else if (newJsonList.length < perPage){
+                participantJson = participantJson.concat(newJsonList);
+                break;
+            }else{
+                participantJson = participantJson.concat(newJsonList);
+                page += 1;
+            }
+        }
+        
+            participantJson.forEach(participation => {
+                var participants = document.getElementById("participants");
+                var participant = document.createElement("DIV");
+                participant.className = "participantStyle";
+                participant.onclick = function () {
+                    window.open(participation.html_url);
+                };
+            
+            var participantImage = new Image(50, 50);
+            participantImage.src = participation.avatar_url;
+            participantImage.className = "partImage";
+            
+            var participanPar = document.createElement("P");
+            participanPar.className = "partParagraph";
+            participanPar.innerHTML = "<b>Username:</b> " + participation.login + " <hr> <b>contributions:</b> " + participation.contributions;
+            
+            participant.appendChild(participantImage);
+            participant.appendChild(participanPar);
+            participants.appendChild(participant);
+        }); 
+    </script>
+
+
+</body>
+</html>
