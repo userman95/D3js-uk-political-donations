@@ -1281,10 +1281,72 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #026 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #026&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+  <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+      <h4 class="ntz">
+        <img src="https://avatars0.githubusercontent.com/u/22705721?s=460&v=4" height="42" width="42">  
+        <span class="word">Αναστασία Τζώρα</span>
+        <span class="letter">Π2015196</span>
+      </h4>
   </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  
+  <script>
+  
+var ntz = {};
+ntz.opacityIn = [0,1];
+ntz.scaleIn = [0.2, 1];
+ntz.scaleOut = 3;
+ntz.durationIn = 100;
+ntz.durationOut = 200;
+ntz.delay = 150;
+
+   
+anime.timeline({loop: true})
+  .add({
+    targets: '.ntz .word',
+    scale: [14,1],
+    opacity: [0,1],
+    easing: "easeOutCirc",
+    duration: 400,
+    delay: function(el, i) {
+      return 400 * i;
+    }
+  }).add({
+    targets: '.ntz',
+    opacity: 0,
+    duration: 500,
+    easing: "easeOutExpo",
+    delay: 500
+  });
+  </script>  
+  
+  <style>
+  .ntz {
+  font-weight: 800;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.ntz .word {
+  display: inline-block;
+  line-height: 0.05em;
+}
+
+.ntz .letter {
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        line-height: 1cm;
+        font-size: 20px;
+        font-weight:bold;
+        font-family:Arial;
+	display: inline-block;
+	position:relative;
+   }
+
+
+</style>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #026 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
