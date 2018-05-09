@@ -1764,10 +1764,56 @@ ml.timelines["mPapaxristos"] = anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #049 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #049&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+   <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+      <h4>
+        <span>&nbsp;</span>
+        <img src="https://avatars1.githubusercontent.com/u/22773643?s=400&v=4" height="42" width="42">  
+        <span class="ml49"><span class="letters">&nbsp;konstantinadeliveri&nbsp;</span></span>
+      </h4>
   </div>
+  
+  <style>
+  
+  .ml49 {  
+  position:relative;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  font-size: 1em;
+}
+.ml49 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+  </style>
+  
+  <script>
+  // Wrap every letter in a span
+$('.ml49').each(function(){
+  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+});
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml49 .letter',
+    translateY: [50,0],
+    translateZ: 0,
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: function(el, i) {
+      return 300 + 30 * i;
+    }
+  }).add({
+    targets: '.ml49 .letter',
+    translateY: [0,-100],
+    opacity: [1,0],
+    easing: "easeInExpo",
+    duration: 1200,
+    delay: function(el, i) {
+      return 100 + 30 * i;
+    }
+  });
+  </script>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #049 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
