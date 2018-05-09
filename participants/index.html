@@ -1379,10 +1379,61 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #029 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #029&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
+   <div style="border: 2px solid; border-radius: 5px; background-color: #000000; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+    <h4>
+      <img src="https://avatars0.githubusercontent.com/u/22731548?s=460&v=4" height="42" width="42">
+      <span class="ml9">
+        <span class="text-wrapper">
+          <span class="letters">p15diak</span>
+        </span>
+      </span>
+    </h4>
   </div>
+  <style>
+    .ml9 {
+      position: relative;
+      font-weight: 180;
+      font-size: 1.2em;
+    }
+
+    .ml9 .text-wrapper {
+      position: relative;
+      display: inline-block;
+      padding-top: 0.2em;
+      padding-right: 0.05em;
+      padding-bottom: 0.1em;
+      overflow: hidden;
+      color:aliceblue;
+    }
+
+    .ml9 .letter {
+      transform-origin: 50% 100%;
+      display: inline-block;
+      line-height: 1em;
+    }
+  </style>
+  <script>
+    $('.ml9 .letters').each(function () {
+      $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    });
+
+    anime.timeline({ loop: true })
+      .add({
+        targets: '.ml9 .letter',
+        scale: [0, 1],
+        duration: 2000,
+        elasticity: 600,
+        delay: function (el, i) {
+          return 45 * (i + 1)
+        }
+      }).add({
+        targets: '.ml9',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  </script>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #029 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
