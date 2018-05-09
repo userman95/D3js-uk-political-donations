@@ -1318,10 +1318,38 @@ body {
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #032 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #032&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
-  </div>
+ <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
+     <h4>
+        <span>&nbsp;</span>
+        <img src="https://avatars3.githubusercontent.com/u/36995217?s=400&v=4" height="42" width="42">  
+        <span class="ml7"><span class="letters">&nbsp;p13mant2&nbsp;</span></span>
+      </h4>
+    <script>
+// Wrap every letter in a span
+$('.ml7 .letters').each(function(){
+  $(this).html($(this).text().replace(/([^\x20-\x60]|\w)/g, "<span class='letter'>$&</span>"));
+});
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml7 .letter',
+    translateY: ["0.7em", 0],
+    translateX: ["0.8em", 0],
+    translateZ: 0,
+    rotateZ: [180, 0],
+    duration: 750,
+    easing: "easeOutExpo",
+    delay: function(el, i) {
+      return 50 * i;
+    }
+  }).add({
+    targets: '.ml7',
+    opacity: 0,
+    duration: 1500,
+    easing: "easeOutExpo",
+    delay: 1500
+  });
+    </script>
+	</div>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #032 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
