@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2015077</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <style>
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 3em;
+            color:#70ba53;
+        }
+        body{
+            background: #BA5370;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #F4E2D8, #BA5370);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #F4E2D8, #BA5370); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        .card{
+            background-color: transparent;
+        }
+        .card img{
+            height:35vh;
+            cursor: pointer;
+        }
+
+        p{
+            font-size: 1.2em;
+            padding: 5px;
+            letter-spacing: .05em;
+        }
+
+        div#participants {
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center"> Participants </h1>
+
+    <div id="participants"></div>
+
+    <script>
+        var participantsElement = document.getElementById("participants");
+            participantsElement.className += "row";
+        function EmeisKaiEmeis(participant) {
+
+
+            var newStudent = document.createElement("DIV");
+            newStudent.id = participant.login;
+            newStudent.className += "col-md-3 card";
+            newStudent.onclick = function () {
+                window.open(participant.html_url);
+            };
+            var newStudentImg = new Image();
+            newStudentImg.id = participant.login + "-img";
+            newStudentImg.src = participant.avatar_url;
+            newStudentImg.className += "card-img-top";
+
+            var newStudentP = document.createElement("p");
+            newStudentP.id = participant.login + "-p";
+            newStudentP.className += "card-text";
+            newStudentP.innerHTML = "<b>Name:</b> " + participant.login + " </br> <b>Contributions:</b> " + participant.contributions;
+
+            newStudent.appendChild(newStudentImg);
+            newStudent.appendChild(newStudentP);
+            participantsElement.appendChild(newStudent);
+        }
+
+        var xhReq = new XMLHttpRequest();
+        var participantsJsonObject = [];
+        var page = 1;
+        var per_page = 100
+        while (true) {
+            //request data
+            xhReq.open("GET", "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors?page=" + page + "&per_page=" + per_page, false);
+            xhReq.send(null);
+
+            var data_lst = JSON.parse(xhReq.responseText);
+            var data_lst_len = data_lst.length;
+            if (data_lst_len === 0) {
+                break;
+            }
+            else {
+                participantsJsonObject = participantsJsonObject.concat(data_lst);
+
+                if (data_lst_len != per_page) {
+                    break;
+                }
+                else {
+                    page++;
+                }
+            }
+        }
+
+        for (var i = 0; i < participantsJsonObject.length; i++) {
+            EmeisKaiEmeis(participantsJsonObject[i]);
+        }
+    </script>
+</body>
+
+</html>
