@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2015103-Participants</title>
+    <h1>Participants</h1>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+         body {
+            background: #ffcc99;
+            font-family: "Arial", Arial, sans-serif;
+        }
+        .student {
+			text-align: center;
+			background: rgba(38, 12, 12, 0.5);
+			margin-right: 5px;
+			margin-bottom: 5px;
+			width: 200px;
+			height: 220px;
+			display: inline-block;
+		}
+		.avatar{
+		    display: block;
+		    margin-left: auto;
+		    margin-right: auto;
+		}
+    </style>
+</head>
+<body>
+    <div id = "mydiv"></div>
+    <script type="text/javascript">
+            function start(){
+
+                var direpo  = "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors?per_page=200";
+                var req = new XMLHttpRequest();
+                req.open("get", direpo, false);
+                req.send();
+                var retrieve = JSON.parse(req.responseText);
+                console.log(retrieve);
+                for (var i =0;i<retrieve.length;i++){
+                    append(retrieve[i]);
+                }
+                function append(retrieve) {
+                    var div = document.createElement("div");
+                    var image = new Image(150, 150);
+                    div.className  = "student";
+                    image.className = "avatar";
+                    image.src = retrieve.avatar_url;
+                    div.appendChild(image);
+                    div.innerHTML += "<p><b> "+retrieve.login + "</b></br> Contributions: "+retrieve.contributions +" </p>";
+                    document.getElementById("mydiv").appendChild(div);
+
+                }
+            }
+            window.onload = start();
+    </script>
+</body>
+</html>
