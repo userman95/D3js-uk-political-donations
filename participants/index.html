@@ -691,7 +691,7 @@ anime.timeline({loop: true})
   <script>
   // Wrap every letter in a span
   $('.ml1 .line').each(function(){
-    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='line'>$&</span>"));
   });
    
    anime.timeline({loop: true}) 
