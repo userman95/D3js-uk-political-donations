@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2015174</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <style>
+        .title {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 3em;
+            color:aqua;
+        }
+        body{
+            background: #336699;
+        }
+
+        .card{
+            background-color: transparent;
+        }
+        .card img{
+            height:35vh;
+            cursor: pointer;
+        }
+
+        p{
+            font-size: 1.2em;
+            padding: 5px;
+            letter-spacing: .05em;
+        }
+
+        div#participants {
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title"> Συμμετεχοντες </h1>
+
+    <div id="participants"></div>
+
+    <script>
+        var participantsElement = document.getElementById("participants");
+            participantsElement.className += "row";
+        function parPage(participant) {
+
+
+            var newStudent = document.createElement("DIV");
+            newStudent.id = participant.login;
+            newStudent.className += "col-md-3 card";
+            newStudent.onclick = function () {
+                window.open(participant.html_url);
+            };
+            var newStudentImg = new Image();
+            newStudentImg.id = participant.login + "-img";
+            newStudentImg.src = participant.avatar_url;
+            newStudentImg.className += "card-img-top";
+
+            var newStudentP = document.createElement("p");
+            newStudentP.id = participant.login + "-p";
+            newStudentP.className += "card-text";
+            newStudentP.innerHTML = "<b>Name:</b> " + participant.login + " </br> <b>Contributions:</b> " + participant.contributions;
+
+            newStudent.appendChild(newStudentImg);
+            newStudent.appendChild(newStudentP);
+            participantsElement.appendChild(newStudent);
+        }
+
+        var parData = new XMLHttpRequest();
+        var parObj = [];
+        var counter = 1;
+        var parPerPage = 200
+        while (true) {
+            //request data
+            parData.open("GET", "https://api.github.com/repos/ioniodi/D3js-uk-political-donations/contributors?page=" + counter + "&per_page=" + parPerPage, false);
+            parData.send(null);
+
+            var parList = JSON.parse(parData.responseText);
+            var parListLength = parList.length;
+            if (parListLength === 0) {
+                break;
+            }
+            else {
+                parObj = parObj.concat(parList);
+
+                if (parListLength != parPerPage) {
+                    break;
+                }
+                else {
+                    counter++;
+                }
+            }
+        }
+
+        for (var i = 0; i < parObj.length; i++) {
+            parPage(parObj[i]);
+        }
+    </script>
+</body>
+
+</html>
