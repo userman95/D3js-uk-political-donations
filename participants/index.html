@@ -1019,51 +1019,48 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #021 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
 <div style="border: 2px solid; border-radius: 5px; background-color: #e5e5e5; width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-     <h4>
+         <h4>
+
         <span>&nbsp;</span>
+
         <img src="https://avatars0.githubusercontent.com/u/22644519?v=4" height="42" width="42">  
-        <span class="ml7"><span class="letters">&nbsp;p15tsiv&nbsp;</span></span>
-     </h4>
-  </div>
+
+        <span class="ml2"><span class="letter">&nbsp;p15tsiv&nbsp;</span></span>
+
+      </h4>
+
+  </div>    
+
+  <style>
+  .ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+  </style>
+
   <script>
-$('.ml13').each(function(){
-  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-});
-anime.timeline({loop: true})
+  $('.ml2').each(function(){
+    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+  });
+  anime.timeline({loop: true})
   .add({
-    targets: '.ml13 .letter',
-    translateY: [100,0],
-    translateZ: 0,
+    targets: '.ml2 .letter',
+    scale: [4,1],
     opacity: [0,1],
+    translateZ: 0,
     easing: "easeOutExpo",
-    duration: 1400,
+    duration: 950,
     delay: function(el, i) {
-      return 300 + 30 * i;
+      return 70*i;
     }
   }).add({
-    targets: '.ml13 .letter',
-    translateY: [0,-100],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 1200,
-    delay: function(el, i) {
-      return 100 + 30 * i;
-    }
+    targets: '.ml2',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
   });
-  </script>  
-  <style>
-    .ml13 {
-      font-size: 1.9em;
-      text-transform: uppercase;
-      letter-spacing: 0.5em;
-      font-weight: 600;
-    }
-
-    .ml13 .letter {
-      display: inline-block;
-      line-height: 1em;
-    }
-  </style>
+</script>
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #021 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
