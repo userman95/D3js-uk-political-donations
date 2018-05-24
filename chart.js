@@ -377,7 +377,3 @@ var x = document.getElementById("myAudio");
 function playAudio() { 
     x.play(); 
 } 
-
-$(document).ready(function() {
-    $("#initial-content").zoomTarget();
-});
