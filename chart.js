@@ -346,6 +346,7 @@ function mouseover(d, i) {
 		.html(infoBox)
 			.style("display","block");
 	
+	responsiveVoice.speak("The name of the donor is" + donor + "             and the ammount of the donation is " + amount);
 	
 	}
 
