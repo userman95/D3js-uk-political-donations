@@ -236,6 +236,4 @@ https://github.com/yui/pure/blob/master/LICENSE.md
     color: rgb(0, 120, 231);
     color: #fff
 }
-/*Magnifier*/
-div.magnifiable { color: red; }
-div.magnifiable:hover { font-size: 200%; }
+
