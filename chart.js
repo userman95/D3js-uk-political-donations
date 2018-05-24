@@ -379,5 +379,5 @@ function playAudio() {
 } 
 
 $(document).ready(function() {
-    $("#element").zoomTarget();
+    $("#initial-content").zoomTarget();
 });
