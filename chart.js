@@ -92,7 +92,8 @@ function start() {
 		.attr("r", 0)
 		.style("fill", function(d) { return fill(d.party); })
 		.on("mouseover", mouseover)
-		.on("mouseout", mouseout);
+		.on("mouseout", mouseout)
+		.on("click",click);
 		// Alternative title based 'tooltips'
 		// node.append("title")
 		//	.text(function(d) { return d.donor; });
@@ -357,7 +358,11 @@ function mouseout() {
 		d3.select(".tooltip")
 			.style("display", "none");
 		}
-
+//Click event
+function click(d){
+	var q = d.donor;
+	    window.open('http://google.com/search?q='+q);
+}
 $(document).ready(function() {
 		d3.selectAll(".switch").on("click", function(d) {
       var id = d3.select(this).attr("id");
