@@ -378,3 +378,6 @@ function playAudio() {
     x.play(); 
 } 
 
+$(document).ready(function() {
+    $("#element").zoomTarget();
+});
