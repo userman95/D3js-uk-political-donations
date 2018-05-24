@@ -236,3 +236,20 @@ https://github.com/yui/pure/blob/master/LICENSE.md
     color: rgb(0, 120, 231);
     color: #fff
 }
+/*Magnifier*/
+* {margin: 0; padding: 0;}
+.magnify {width: 200px; margin: 50px auto; position: relative;}
+
+/*Lets create the magnifying glass*/
+.large {
+	width: 208px; height: 208px;
+	position: absolute;
+	border-radius: 100%;
+	
+/*Multiple box shadows to achieve the glass effect*/
+	box-shadow:  inset 0 2px 4px rgba(0,0,0,0.29), inset 70px 120px 0px -80px  rgba(255,255,255,0.35), 0 0 0 5px #fff, 0 3px 6px 4px rgba(0,0,0,0.5); 
+	
+	
+/*hide the glass by default*/
+	display: none;
+}
