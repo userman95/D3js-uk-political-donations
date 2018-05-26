@@ -5,6 +5,7 @@ var nodes = [];
 var force, node, data, maxVal;
 var brake = 0.2;
 var radius = d3.scale.sqrt().range([10, 20]);
+var y = 0;
 
 var partyCentres = { 
     con: { x: w / 3, y: h / 3.3}, 
@@ -354,8 +355,8 @@ function mouseover(d, i) {
 
     var c = document.getElementById("IconContainer");
     var ctx = c.getContext("2d");
-    ctx.drawImage(img,10,10);
-	
+    ctx.drawImage(img,10,y);
+	y = 42 +y;
 	}
 
 function mouseout() {
