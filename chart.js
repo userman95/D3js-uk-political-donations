@@ -384,7 +384,7 @@ var x = document.getElementById("myAudio");
 function playAudio() { 
     x.play(); 
 } 
-/*Code gia to kainourgio tab*/
+/*Code gia to kainourgio tab
 
 // Dimensions of sunburst.
 var width = 750;
@@ -691,3 +691,4 @@ function buildHierarchy(csv) {
   }
   return root;
 };
+*/
