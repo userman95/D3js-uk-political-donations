@@ -350,9 +350,9 @@ function mouseover(d, i) {
 	responsiveVoice.speak("The name of the donor is" + donor + "             and the ammount of the donation is " + amount);
 
     var newIcon = $("#IconContainer").html();
-    var htmlToAdd = "<div><img src='" + imageFile +"' class='icon-image' align='middle' onError='this.src=\"https://github.com/favicon.ico\";'/>"+
+    var addIt = "<div><img src='" + imageFile +"' class='icon-image' align='middle' onError='this.src=\"https://github.com/favicon.ico\";'/>"+
 		"</div>"
-    	$("#IconContainer").html(htmlToAdd + oldHtml);
+    	$("#IconContainer").html(addIt + newIcon);
 
 	}
 
