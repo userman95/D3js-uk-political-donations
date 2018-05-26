@@ -347,10 +347,10 @@ function mouseover(d, i) {
 			.style("display","block");
 	
 	responsiveVoice.speak("The name of the donor is" + donor + "             and the ammount of the donation is " + amount);
-
+	
     var c = document.getElementById("IconContainer");
     var ctx = c.getContext("2d");
-    ctx.drawImage(imageFile);
+    ctx.drawImage(imageFile,10,10);
 	
 	}
 
