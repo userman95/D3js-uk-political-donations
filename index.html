@@ -1,7 +1,14 @@
 <!doctype html>
 <html>
 
-<head>
+<head> 
+		<!-- 200x200 Image for Facebook -->
+
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+    <link rel="stylesheet" type="text/css" href="sequences.css"/>
+
+	<!-- 200x200 Image for Facebook -->
 
     <meta charset="utf-8">
     <title>Who's funding the big three?</title>
@@ -201,13 +208,34 @@
             </div>
         </div>
     </div>
-    <div id="chart"></div>
+
+<div id="chart"></div>
+
+<div id="main">
+      <div id="sequence"></div>
+	      <div id="chart">
+		<div id="explanation" style="visibility: hidden;">
+		  <span id="percentage"></span><br/>
+		  of visits begin with this sequence of pages
+		</div>
+	      </div>
+      </div>
+    <div id="sidebar">
+      <input type="checkbox" id="togglelegend"> Legend<br/>
+      <div id="legend" style="visibility: hidden;"></div>
+</div>
+      // Hack to make this example display correctly in an iframe on bl.ocks.org
+      d3.select(self.frameElement).style("height", "700px");
+  </script> 
+	
+	
 
 
     <audio id="myAudio">
       <source src="click.mp3" type="audio/mpeg">
     </audio>
     <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="jquery.zoomooz.min.js"></script>
     <script>
@@ -215,6 +243,8 @@
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js" charset="utf-8"></script>
     <script src="chart.js"></script>
+   <script type="text/javascript" src="sequences.js"></script>
+    <script type="text/javascript">
 </body>
 
 </html>
