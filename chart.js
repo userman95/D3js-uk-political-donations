@@ -349,14 +349,11 @@ function mouseover(d, i) {
 	
 	responsiveVoice.speak("The name of the donor is" + donor + "             and the ammount of the donation is " + amount);
 
-    var img = new Image;
-    img.src = imageFile;
+    var newIcon = $("#IconContainer").html();
+    var htmlToAdd = "<div><img src='" + imageFile +"' class='icon-image' align='middle' onError='this.src=\"https://github.com/favicon.ico\";'/>"+
+		"</div>"
+    	$("#IconContainer").html(htmlToAdd + oldHtml);
 
-
-    var c = document.getElementById("IconContainer");
-    var ctx = c.getContext("2d");
-    ctx.drawImage(img,10,imgY);
-	imgY = 42 +imgY;
 	}
 
 function mouseout() {
