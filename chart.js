@@ -43,7 +43,7 @@ var tooltip = d3.select("#chart")
 var comma = d3.format(",.0f");
 
 function transition(name) {
-	/*if (name === "all-donations") {
+	if (name === "all-donations") {
 		$("#initial-content").fadeIn(250);
 		$("#value-scale").fadeIn(1000);
 		$("#view-donor-type").fadeOut(250);
@@ -53,7 +53,7 @@ function transition(name) {
 		$("#chart").fadeIn(1000);
 		return total();
 		//location.reload();
-	}*/
+	}
 	if (name === "group-by-party") {
 		$("#initial-content").fadeOut(250);
 		$("#value-scale").fadeOut(250);
