@@ -26,7 +26,7 @@ li {
 }
 
 /* Initial appearance on load */
-#view-party-type, #view-donor-type, #view-source-type {
+#view-party-type, #view-donor-type, #view-source-type,#view-amount {
     display: none;
 }
 
@@ -250,3 +250,80 @@ https://github.com/yui/pure/blob/master/LICENSE.md
                background-color: yellow;
                padding: 10px;
            }
+
+/* Amount splits */
+#view-amount {
+    top: 140px;
+    left: 500px;
+    width: 370px;  
+}
+#splitone {
+    font-weight: bold;
+    position: absolute;
+    top: 700px;
+    left: 750px;
+    width: 93px;
+}
+
+#splittwo {
+    font-weight: bold;
+    position: absolute;
+    top: 800px;
+    left: 150px;
+    width: 93px;
+}
+
+#splitthree {
+    font-weight: bold;
+    position: absolute;
+    top: 250px;
+    left: 750px;
+    width: 93px;
+}
+
+#splitfour {
+    font-weight: bold;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    width: 93px;
+}
+
+/* Amount splits */
+#view-amount {
+    top: 140px;
+    left: 500px;
+    width: 370px;  
+}
+#splitone {
+    font-weight: bold;
+    position: absolute;
+    top: 700px;
+    left: 750px;
+    width: 93px;
+}
+
+#splittwo {
+    font-weight: bold;
+    position: absolute;
+    top: 800px;
+    left: 150px;
+    width: 93px;
+}
+
+#splitthree {
+    font-weight: bold;
+    position: absolute;
+    top: 250px;
+    left: 750px;
+    width: 93px;
+}
+
+#splitfour {
+    font-weight: bold;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    width: 93px;
+}
+
