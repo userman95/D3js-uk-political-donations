@@ -257,31 +257,31 @@ https://github.com/yui/pure/blob/master/LICENSE.md
     left: 500px;
     width: 370px;  
 }
-#splitone {
+#first {
     font-weight: bold;
     position: absolute;
-    top: 700px;
-    left: 750px;
+    top: 630px;
+    left: 600px;
     width: 93px;
 }
 
-#splittwo {
+#second {
     font-weight: bold;
     position: absolute;
-    top: 800px;
-    left: 150px;
+    top: 750px;
+    left: 130px;
     width: 93px;
 }
 
-#splitthree {
+#third {
     font-weight: bold;
     position: absolute;
-    top: 250px;
-    left: 750px;
+    top: 200px;
+    left: 600px;
     width: 93px;
 }
 
-#splitfour {
+#fourth {
     font-weight: bold;
     position: absolute;
     top: 200px;
