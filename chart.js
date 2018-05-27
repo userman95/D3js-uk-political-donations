@@ -168,7 +168,7 @@ function amountOfDonation(){
 		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
 		.on("tick", donations)
 		.start()
-		//.colourByParty();
+		.colourByParty();
 
 }
 
@@ -195,7 +195,7 @@ function types(e) {
 }
 
 function all(e) {
-	node.each(moveToCentre(e.alpha))
+	node.each(moveToAmounts(e.alpha))
 		.each(collide(0.001));
 
 		node.attr("cx", function(d) { return d.x; })
@@ -276,7 +276,27 @@ function moveToFunds(alpha) {
 		d.y += (centreY - d.y) * (brake + 0.02) * alpha * 1.1;
 	};
 }
-
+function moveToAmounts(alpha) {
+	return function(d) {
+		var centreY = svgCentre.y;
+		if (d.value <= 100000) {
+				centreX = svgCentre.x +70;
+				centreY = svgCentre.y -70;
+		} else if (d.value <= 500000) {
+				centreX = svgCentre.x +450;
+				centreY = svgCentre.y -70;
+		} else if (d.value <= 1000000) {
+				centreX = svgCentre.x +70;
+				centreY = svgCentre.y +250;
+		} else {
+				centreX = svgCentre.x +500; 
+				centreY = svgCentre.y +250;
+		}
+		
+		d.x += (centreX - d.x) * (brake + 0.02) * alpha * 1.1;
+		d.y += (centreY - d.y) * (brake + 0.02) * alpha * 1.1;	
+	};
+}
 // Collision detection function by m bostock
 function collide(alpha) {
   var quadtree = d3.geom.quadtree(nodes);
