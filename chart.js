@@ -77,7 +77,12 @@ function transition(name) {
 		return fundsType();
 	}
 	if (name === "group-by-amount-of-donation"){
-		 amountOfDonation();
+		$("#initial-content").fadeOut(250);
+		$("#value-scale").fadeOut(250);
+		$("#view-donor-type").fadeOut(250);
+		$("#view-party-type").fadeOut(250);
+		$("#view-source-type").fadeIn(1000);
+		return amountOfDonation();	
 	}
 }
 
@@ -147,6 +152,15 @@ function fundsType() {
 		.on("tick", types)
 		.start();
 }
+function amountOfDonation(){
+	force.gravity(0)
+		.friction(0.7)
+		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
+		.on("tick", donations)
+		.start();
+		.colourByParty();
+
+}
 
 function parties(e) {
 	node.each(moveToParties(e.alpha));
@@ -177,7 +191,13 @@ function all(e) {
 		node.attr("cx", function(d) { return d.x; })
 			.attr("cy", function(d) {return d.y; });
 }
+function donations (e){
+		node.each(moveToCentre(e.alpha))
+		.each(collide(0.002));
 
+		node.attr("cx", function(d) { return d.x; })
+			.attr("cy", function(d) {return d.y; });
+}
 
 function moveToCentre(alpha) {
 	return function(d) {
