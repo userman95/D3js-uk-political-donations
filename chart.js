@@ -154,11 +154,11 @@ function fundsType() {
 }
 function amountOfDonation(){
 	force.gravity(0)
-		.friction(0.7)
+		.friction(0.8)
 		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
 		.on("tick", donations)
 		.start()
-		.colourByParty();
+		//.colourByParty();
 
 }
 
@@ -193,7 +193,7 @@ function all(e) {
 }
 function donations (e){
 		node.each(moveToCentre(e.alpha))
-		.each(collide(0.002));
+		//.each(collide(0.002));
 
 		node.attr("cx", function(d) { return d.x; })
 			.attr("cy", function(d) {return d.y; });
