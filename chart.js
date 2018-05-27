@@ -157,7 +157,7 @@ function amountOfDonation(){
 		.friction(0.7)
 		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
 		.on("tick", donations)
-		.start();
+		.start()
 		.colourByParty();
 
 }
