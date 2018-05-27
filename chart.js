@@ -438,8 +438,8 @@ var x = document.getElementById("myAudio");
 function playAudio() { 
     x.play(); 
 } 
-/*Code gia to kainourgio tab
-function amountOfDonation(){
+Code gia to kainourgio tab
+function SunBurst(){
 	// Dimensions of sunburst.
 	var width = 750;
 	var height = 600;
@@ -452,12 +452,13 @@ function amountOfDonation(){
 
 	// Mapping of step names to colors.
 	var colors = {
-	  "home": "#5687d1",
-	  "product": "#7b615c",
-	  "search": "#de783b",
-	  "account": "#6ab975",
-	  "other": "#a173d1",
-	  "end": "#bbbbbb"
+	  "donor": "#5687d1",
+	  "amount": "#7b615c",
+	  "party": "#de783b",
+	  "entity": "#6ab975",
+	  "color":"#eee",
+	  "partyname": "#a173d1",
+	  "entityname": "#bbbbbb"
 	};
 
 	// Total size of all segments; we set this later, after loading the data.
@@ -746,4 +747,4 @@ function amountOfDonation(){
 	  return root;
 	};
 }
-*/
+
