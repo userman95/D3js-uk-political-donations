@@ -77,7 +77,7 @@ function transition(name) {
 		return fundsType();
 	}
 	if (name === "group-by-amount-of-donation")
-		return amountOfDonation();
+		 amountOfDonation();
 	}
 
 function start() {
