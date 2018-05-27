@@ -6,6 +6,7 @@ var force, node, data, maxVal;
 var brake = 0.2;
 var radius = d3.scale.sqrt().range([10, 20]);
 var imgY = 0;
+var counter =0;
 
 var partyCentres = { 
     con: { x: w / 3, y: h / 3.3}, 
@@ -108,7 +109,7 @@ function transition(name) {
 		$("#view-amount").fadeOut(1000);
         	$("#chart").fadeOut(1000);
 		$("#chartTwo").fadeIn(1000);
-		 SunBurst();	
+		return SunBurst();	
 	}
 	
 }
@@ -609,17 +610,19 @@ function SunBurst(){
 	}
 
 	function initializeBreadcrumbTrail() {
-	  // Add the svg area.
-	  var trail = d3.select("#sequence").append("svg:svg")
-	      .attr("width", width)
-	      .attr("height", 50)
-	      .attr("id", "trail");
-	  // Add the label at the end, for the percentage.
-	  trail.append("svg:text")
-	    .attr("id", "endlabel")
-	    .style("fill", "#000");
+		if(counter===0){
+		  // Add the svg area.
+		  var trail = d3.select("#sequence").append("svg:svg")
+		      .attr("width", width)
+		      .attr("height", 50)
+		      .attr("id", "trail");
+		  // Add the label at the end, for the percentage.
+		  trail.append("svg:text")
+		    .attr("id", "endlabel")
+		    .style("fill", "#000");
+			counter++;
+		}
 	}
-
 	// Generate a string that describes the points of a breadcrumb polygon.
 	function breadcrumbPoints(d, i) {
 	  var points = [];
