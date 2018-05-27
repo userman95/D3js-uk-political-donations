@@ -108,7 +108,7 @@ function transition(name) {
 		$("#view-amount").fadeOut(1000);
         	$("#chart").fadeOut(1000);
 		$("#chartTwo").fadeIn(1000);
-		return SunBurst();	
+		 SunBurst();	
 	}
 	
 }
