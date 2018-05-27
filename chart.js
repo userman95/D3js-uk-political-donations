@@ -168,7 +168,7 @@ function amountOfDonation(){
 		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
 		.on("tick", donations)
 		.start()
-		.colourByParty();
+		//.colourByParty();
 
 }
 
@@ -195,14 +195,14 @@ function types(e) {
 }
 
 function all(e) {
-	node.each(moveToAmounts(e.alpha))
+	node.each(moveToCentre(e.alpha))
 		.each(collide(0.001));
 
 		node.attr("cx", function(d) { return d.x; })
 			.attr("cy", function(d) {return d.y; });
 }
 function donations (e){
-		node.each(moveToCentre(e.alpha))
+		node.each(moveToAmounts(e.alpha))
 		//.each(collide(0.002));
 
 		node.attr("cx", function(d) { return d.x; })
