@@ -84,7 +84,7 @@ function transition(name) {
 		$("#chart").fadeIn(1000);
 		return fundsType();
 	}
-	if (name === "group-by-amount-of-donation"){
+	/*if (name === "group-by-amount-of-donation"){
 		$("#initial-content").fadeOut(250);
 		$("#value-scale").fadeOut(250);
 		$("#view-donor-type").fadeOut(250);
@@ -93,7 +93,7 @@ function transition(name) {
 		$("#view-amount").fadeOut(250);
 		$("#chart").fadeIn(1000);
 		return amountOfDonation();	
-	}
+	}*/
 }
 
 function start() {
