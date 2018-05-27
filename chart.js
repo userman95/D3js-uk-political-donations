@@ -454,7 +454,7 @@ var x = document.getElementById("myAudio");
 function playAudio() { 
     x.play(); 
 } 
-Code gia to kainourgio tab
+//Code gia to kainourgio tab SunBurst Visualization
 function SunBurst(){
 	// Dimensions of sunburst.
 	var width = 750;
