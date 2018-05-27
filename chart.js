@@ -388,7 +388,7 @@ var x = document.getElementById("myAudio");
 function playAudio() { 
     x.play(); 
 } 
-//Code gia to kainourgio tab
+/*Code gia to kainourgio tab
 function amountOfDonation(){
 	// Dimensions of sunburst.
 	var width = 750;
@@ -696,4 +696,4 @@ function amountOfDonation(){
 	  return root;
 	};
 }
-
+*/
