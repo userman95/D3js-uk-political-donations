@@ -95,7 +95,7 @@ function transition(name) {
 		$("#view-party-type").fadeOut(250);
 		$("#view-source-type").fadeOut(250);
 		$("#view-amount").fadeIn(1000);
-        	$("#chart").fadeOut(1000);
+        	$("#chart").fadeIn(1000);
 		$("#chartTwo").fadeOut(1000);
 		return amountOfDonation();	
 	}
@@ -108,7 +108,6 @@ function transition(name) {
 		$("#view-amount").fadeOut(1000);
         	$("#chart").fadeOut(1000);
 		$("#chartTwo").fadeIn(1000);
-
 		return SunBurst();	
 	}
 	
