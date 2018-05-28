@@ -618,7 +618,7 @@ function mouseover(d) {
 	  // Add the label at the end, for the percentage.
 	  trail.append("svg:text")
 	    .attr("id", "endlabel")
-	    .style("fill", "#000");
+	    .style("fill", "#blue");
 	}
 
 	// Generate a string that describes the points of a breadcrumb polygon.
@@ -683,7 +683,7 @@ function mouseover(d) {
 
 	  // Dimensions of legend item: width, height, spacing, radius of rounded rect.
 	  var li = {
-	    w: 75, h: 30, s: 3, r: 3
+	    w: 100, h: 30, s: 3, r: 3
 	  };
 
 	  var legend = d3.select("#legend").append("svg:svg")
@@ -763,6 +763,6 @@ function mouseover(d) {
 	    }
 	  }
 	  return root;
-	};
+	}
 }
 
