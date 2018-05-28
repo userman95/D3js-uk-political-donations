@@ -52,7 +52,7 @@ function transition(name) {
 		$("#view-party-type").fadeOut(250);
 		$("#view-amount").fadeOut(250);
 		$("#chart").fadeIn(1000);
-		$("#main").fadeOut(1000);
+		$("#main").fadeOut(250);
 		return total();
 		//location.reload();
 	}
