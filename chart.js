@@ -465,7 +465,7 @@ function SunBurst(){
 
 	// Breadcrumb dimensions: width, height, spacing, width of tip/tail.
 	var b = {
-	  w: 100, h: 30, s: 3, t: 10
+	  w: 150, h: 30, s: 3, t: 10
 	};
 
 	// Mapping of step names to colors.
