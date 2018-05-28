@@ -555,7 +555,6 @@ function SunBurst(){
 	      .style("visibility", "");
 
 	  var sequenceArray = getAncestors(d);
-	  updateBreadcrumbs(sequenceArray, percentageString);
 
 	  // Fade all the segments.
 	  d3.selectAll("path")
