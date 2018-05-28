@@ -730,8 +730,8 @@ function mouseover(d) {
 	  var root = {"name": "root", "children": []};
 	  for (var i = 0; i < csv.length; i++) {
 	    var sequence = csv[i][0];
-	    var amount = +csv[i][1];
-	    if (isNaN(amount)) { // e.g. if this is a header row
+	    var size = +csv[i][1];
+	    if (isNaN(size)) { // e.g. if this is a header row
 	      continue;
 	    }
 	    var parts = sequence.split("-");
@@ -758,7 +758,7 @@ function mouseover(d) {
 		currentNode = childNode;
 	      } else {
 		// Reached the end of the sequence; create a leaf node.
-		childNode = {"name": nodeName, "amount": amount};
+		childNode = {"name": nodeName, "size": size};
 		children.push(childNode);
 	      }
 	    }
