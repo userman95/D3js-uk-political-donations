@@ -482,7 +482,7 @@ function SunBurst(){
 	// Total size of all segments; we set this later, after loading the data.
 var totalSize = 0; 
 
-var vis = d3.select("#chart").append("svg:svg")
+var vis = d3.select("#chartTwo").append("svg:svg")
     .attr("width", width)
     .attr("height", height)
     .append("svg:g")
