@@ -540,14 +540,14 @@ function SunBurst(){
 	 };
 
 	// Fade all but the current sequence, and show it in the breadcrumb trail.
-	function mouseoverTwo(d,csv) {
-		  var sequence =0;
-		  for (var i = 0; i < csv.length; i++) {
-		     sequence = csv[i][1];
-			console.log(sequence);
-		  var percentageString = sequence  ;
-		
+	function mouseoverTwo(d) {
+	  var percentage = (100 * d.value / totalSize).toPrecision(3);
 
+	var percentageString = percentage + "%";
+	  if (percentage < 0.1) {
+	    percentageString = "< 0.1%";
+	  }
+	  var percentageString = sequence +"%" ;
 		  d3.select("#percentage")
 		      .text(percentageString);
 
@@ -567,7 +567,7 @@ function SunBurst(){
 			      })
 		      .style("opacity", 1);
 
-		}//end of for
+		//end of for
 	}
 
 	// Restore everything to full opacity when moving off the visualization.
