@@ -510,11 +510,6 @@ function SunBurst(){
 	// Main function to draw and set up the visualization, once we have the data.
 	function createVisualization(json) {
 
-	  // Basic setup of page elements.
-	  initializeBreadcrumbTrail();
-	  drawLegend();
-	  d3.select("#togglelegend").on("click", toggleLegend);
-
 	  // Bounding circle underneath the sunburst, to make it easier to detect
 	  // when the mouse leaves the parent g.
 	  vis.append("svg:circle")
