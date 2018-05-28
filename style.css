@@ -297,6 +297,7 @@ https://github.com/yui/pure/blob/master/LICENSE.md
 #sidebar {
   float: right;
   width: 100px;
+  visibility:hidden;
 }
 
 #sequence {
