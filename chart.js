@@ -716,10 +716,11 @@ function mouseover(d) {
 	  var legend = d3.select("#legend");
 	  if (legend.style("visibility") == "hidden") {
 	    legend.style("visibility", "");
-	  } else {
+	     }
+	  else {
 	    legend.style("visibility", "hidden");
-	  }
-	}
+	       }
+	   }
 
 	// Take a 2-column CSV and transform it into a hierarchical structure suitable
 	// for a partition layout. The first column is a sequence of step names, from
@@ -729,8 +730,8 @@ function mouseover(d) {
 	  var root = {"name": "root", "children": []};
 	  for (var i = 0; i < csv.length; i++) {
 	    var sequence = csv[i][0];
-	    var size = +csv[i][1];
-	    if (isNaN(size)) { // e.g. if this is a header row
+	    var amount = +csv[i][1];
+	    if (isNaN(amount)) { // e.g. if this is a header row
 	      continue;
 	    }
 	    var parts = sequence.split("-");
@@ -757,7 +758,7 @@ function mouseover(d) {
 		currentNode = childNode;
 	      } else {
 		// Reached the end of the sequence; create a leaf node.
-		childNode = {"name": nodeName, "size": size};
+		childNode = {"name": nodeName, "amount": amount};
 		children.push(childNode);
 	      }
 	    }
