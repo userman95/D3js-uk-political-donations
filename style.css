@@ -302,6 +302,8 @@ https://github.com/yui/pure/blob/master/LICENSE.md
 #sequence {
   width: 600px;
   height: 70px;
+  flex: 1 1 auto;
+
 }
 
 #legend {
@@ -311,6 +313,7 @@ https://github.com/yui/pure/blob/master/LICENSE.md
 #sequence text, #legend text {
   font-weight: 600;
   fill: #fff;
+  flex: 1 1 auto;
 }
 
 #chartTwo {
