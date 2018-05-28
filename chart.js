@@ -648,7 +648,7 @@ function mouseover(d) {
 
 	  entering.append("svg:polygon")
 	      .attr("points", breadcrumbPoints)
-	      .style("fill", function(d) { return colors[d.name]; });
+	      .style("fill", function(d) { return colors[d.value]; });
 
 	  entering.append("svg:text")
 	      .attr("x", (b.w + b.t) / 2)
