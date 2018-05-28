@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Unemployment rate aged 25-54</title>
+    <meta property="og:image" content="http://isthisjam.com.s3.amazonaws.com/img/bubble-img.png" />
+    <!-- 180x110 Image for Linkedin -->
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+    <meta property="og:image" content="http://isthisjam.com.s3.amazonaws.com/img/bubble-img.png" />
+    <!-- 200x200 Image for Facebook -->
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,700">
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44807543-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+	    
+    var sound= new Audio();
+    sound.src="ClickSound.mp3";
+    </script>
+</head>
+<!-- Add feature detection and noscript -->
+
+<body>
+
+    <header role="banner" id="title">
+        <h1 class="zoom">Unemployment rate aged 25-54</h1>
+    </header>
+    <nav class="zoom" role="navigation">
+        <ul>
+            <li><a href="#" role="button" onmousedown="sound.play()" class="pure-button switch" id="all-unem-rate">All Rates</a>
+            </li>
+            <li><a href="#" role="button" onmousedown="sound.play()" class="pure-button switch" id="group-by-sex">Split by Sex</a>
+            </li>
+            <li><a href="#" role="button" onmousedown="sound.play()" class="pure-button switch" id="group-by-quarterly">Split by Quarterly</a>
+            </li>
+  
+        </ul>
+    </nav>
+
+    <div id="annotations">
+
+        <!-- Initial annotations -->
+        <div id="initial-content">
+	    <h3 class="zoom">Τα στοιχεία που παραθέτονται προέρχονται από τον Οργανισμό Οικονομικής Συνεργασίας και Ανάπτυξης και αντιπροσωπεύουν τους δείκτες ανεργίας στις χώρες που είναι μέλη του οργανισμού καθώς και τους συνολικούς δείκτες ανεργίας για τις 28 χώρες της Ε.Ε, τις 19 χώρες του Ευρώ αλλά και για τα συμβαλλόμενα μέλη του ΟΟΣΑ.</h3>
+            <p class="zoom">Οι δείκτες ανεργίας που παρουσιάζονται για κάθε χώρα αφορούν τους άνδρες όσο και τις γυναίκες, αλλά και τα δύο φύλα μαζί, για τα 2 τελευταία τρίμηνα του 2017. Ο κάθε κύκλος δείχνει το ποσοστό της ανεργίας για την κάθε χώρα ανάλογα με το φύλο και το τρίμηνο για το οποίο συγκεντρώθηκαν τα στοιχεία.   </p>
+            <p class="zoom">Μπορείτε να επιλέξετε κάθε μια από τις παραπάνω επιλόγες για να πλοηγηθείτε.</p>
+	    <p class="zoom">Data source: <a href=http://www.oecd.org/ target="_blank">The Organisation for Economic Co-operation and Development (OECD)</a>
+            </p>
+        </div>
+        <div id="value-scale">
+           
+            <div  class="zoom" id="a">
+                <strong> 5% &#8212;</strong>
+            </div>
+            <div  class="zoom" id="b">
+                <strong> 10% &#8212;</strong>
+            </div>
+            <div  class="zoom" id="c">
+                <strong> 15% &#8212;</strong>
+            </div>
+            <div class="zoom"  id="d">
+                <strong> 20% &#8212;</strong>
+            </div>
+            <div class="zoom" id="e">
+                <strong> 25% &#8212;</strong>
+            </div>
+        </div>
+        <!-- End initial-->
+
+        <!-- Split by sex annotations -->
+        <div id="view-sex-type">
+              
+                <div class="zoom" id="females">
+                   <h5>Females</h5>
+                        <p>Η χώρα που έρχεται πρώτη στην ανεργία για τις γυναικες είναι η Ελλάδα με ποσοστό 
+			   <strong>25%</strong>και για τα 2 τρίμηνα του 17</p>
+                </div>
+		<div class="zoom" id="males">
+                   <h5>Males</h5>
+                        <p>Η χώρα που έρχεται πρώτη στην ανεργία για τους άνδρες είναι η Ελλάδα με ποσοστό 
+			   <strong>16%</strong>και για τα 2 τρίμηνα του 17</p>
+                </div>
+		<div class="zoom" id="all">
+                   <h5>All Persons</h5>
+                        <p>Η χώρα που έρχεται πρώτη στην ανεργία και για τα δύο φύλα είναι η Ελλάδα με ποσοστό 
+			   <strong>20%</strong>και για τα 2 τρίμηνα του 17</p>
+                </div>
+                
+            </div>
+            
+        </div>
+        <!-- End Split by sex -->
+
+       <!-- Split by quarterly annotations -->
+        <div id="view-quarterly-type">
+	
+		<div class="zoom" id="third">
+                       <h4>The third quarterly of 2017</h4>
+		</div>
+		<div class="zoom" id="fourth">
+                       <h4>The fourth quarterly of 2017</h4>
+		</div>
+	</div>
+	<!-- End Split by quarterly -->
+
+    </div>
+    <div id="chart"></div>
+
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js" charset="utf-8"></script>
+    <script src="chart2.js"></script>
+</body>
+
+
+
+
+</html>
