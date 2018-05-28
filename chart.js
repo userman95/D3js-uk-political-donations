@@ -541,31 +541,33 @@ function SunBurst(){
 
 	// Fade all but the current sequence, and show it in the breadcrumb trail.
 	function mouseover(d) {
+		  var sequence =0;
+		  for (var i = 0; i < csv.length; i++) {
+		     sequence = csv[i][1];
 
-	  var percentage = (100 * d.value / totalSize).toPrecision(3);
-	  var percentageString = percentage + "%";
-	  if (percentage < 0.1) {
-	    percentageString = "< 0.1%";
-	  }
+		  var percentageString = sequence + ;
+		
 
-	  d3.select("#percentage")
-	      .text(percentageString);
+		  d3.select("#percentage")
+		      .text(percentageString);
 
-	  d3.select("#explanation")
-	      .style("visibility", "");
+		  d3.select("#explanation")
+		      .style("visibility", "");
 
-	  var sequenceArray = getAncestors(d);
+		  var sequenceArray = getAncestors(d);
 
-	  // Fade all the segments.
-	  d3.selectAll("path")
-	      .style("opacity", 0.3);
+		  // Fade all the segments.
+		  d3.selectAll("path")
+		      .style("opacity", 0.3);
 
-	  // Then highlight only those that are an ancestor of the current segment.
-	  vis.selectAll("path")
-	      .filter(function(node) {
-			return (sequenceArray.indexOf(node) >= 0);
-		      })
-	      .style("opacity", 1);
+		  // Then highlight only those that are an ancestor of the current segment.
+		  vis.selectAll("path")
+		      .filter(function(node) {
+				return (sequenceArray.indexOf(node) >= 0);
+			      })
+		      .style("opacity", 1);
+
+		}//end of for
 	}
 
 	// Restore everything to full opacity when moving off the visualization.
