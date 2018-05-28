@@ -764,6 +764,6 @@ function mouseover(d) {
 	    }
 	  }
 	  return root;
-	}
+	};
 }
 
