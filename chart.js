@@ -117,19 +117,7 @@ function transition(name) {
 		$("#main").fadeIn(1000);
 		return SunBurst();	
 	}
-		if (name === "DigitalInfo") {
-		$("#initial-content").fadeOut(250);
-		$("#value-scale").fadeOut(1000);
-		$("#view-donor-type").fadeOut(250);
-		$("#view-source-type").fadeOut(250);
-		$("#view-party-type").fadeOut(250);
-		$("#view-amount").fadeOut(250);
-		$("#main").fadeOut(250);
-		$("#sunburst-content").fadeOut(1000);
-		$("#chart").fadeOut(1000);
-		//return SunBurstTwo();
-		//location.reload();
-	}
+
 	
 }
 
