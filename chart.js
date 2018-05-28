@@ -45,6 +45,7 @@ var comma = d3.format(",.0f");
 
 function transition(name) {
 	if (name === "all-donations") {
+		$("#main").fadeOut(250);
 		$("#initial-content").fadeIn(250);
 		$("#value-scale").fadeIn(1000);
 		$("#view-donor-type").fadeOut(250);
@@ -52,7 +53,6 @@ function transition(name) {
 		$("#view-party-type").fadeOut(250);
 		$("#view-amount").fadeOut(250);
 		$("#chart").fadeIn(1000);
-		$("#main").fadeOut(250);
 		return total();
 		//location.reload();
 	}
