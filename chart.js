@@ -544,7 +544,7 @@ function SunBurst(){
 		  var sequence =0;
 		  for (var i = 0; i < csv.length; i++) {
 		     sequence = csv[i][1];
-
+			console.log(sequence);
 		  var percentageString = sequence  ;
 		
 
