@@ -530,7 +530,7 @@ function SunBurst(){
 	      .attr("fill-rule", "evenodd")
 	      .style("fill", function(d) { return colors[d.name]; })
 	      .style("opacity", 1)
-	      .on("mouseover", mouseover);
+	      .on("mouseover", mouseoverTwo);
 
 	  // Add the mouseleave handler to the bounding circle.
 	  d3.select("#container").on("mouseleave", mouseleave);
@@ -540,7 +540,7 @@ function SunBurst(){
 	 };
 
 	// Fade all but the current sequence, and show it in the breadcrumb trail.
-	function mouseover(d,csv) {
+	function mouseoverTwo(d,csv) {
 		  var sequence =0;
 		  for (var i = 0; i < csv.length; i++) {
 		     sequence = csv[i][1];
@@ -586,7 +586,7 @@ function SunBurst(){
 	      .duration(1000)
 	      .style("opacity", 1)
 	      .each("end", function() {
-		      d3.select(this).on("mouseover", mouseover);
+		      d3.select(this).on("mouseover", mouseoverTwo);
 		    });
 
 	  d3.select("#explanation")
