@@ -512,7 +512,7 @@ function createVisualization(json) {
 
   // Basic setup of page elements.
   initializeBreadcrumbTrail();
-  drawLegend();
+  //drawLegend();
   d3.select("#togglelegend").on("click", toggleLegend);
 
   // Bounding circle underneath the sunburst, to make it easier to detect
@@ -679,7 +679,7 @@ function mouseover(d) {
 
 	}
 
-	function drawLegend() {
+	/*function drawLegend() {
 
 	  // Dimensions of legend item: width, height, spacing, radius of rounded rect.
 	  var li = {
@@ -721,7 +721,7 @@ function mouseover(d) {
 	    legend.style("visibility", "hidden");
 	       }
 	   }
-
+*/
 	// Take a 2-column CSV and transform it into a hierarchical structure suitable
 	// for a partition layout. The first column is a sequence of step names, from
 	// root to leaf, separated by hyphens. The second column is a count of how 
