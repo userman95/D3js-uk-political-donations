@@ -28,8 +28,6 @@
         s.parentNode.insertBefore(ga, s);
     })();
 	    
-    var sound= new Audio();
-    sound.src="ClickSound.mp3";
     </script>
 </head>
 <!-- Add feature detection and noscript -->
@@ -41,11 +39,11 @@
     </header>
     <nav class="zoom" role="navigation">
         <ul>
-            <li><a href="#" role="button" onmousedown="sound.play()" class="pure-button switch" id="all-unem-rate">All Rates</a>
+            <li><a href="#" role="button"  onclick="playAudio()" class="pure-button switch" id="all-unem-rate">All Rates</a>
             </li>
-            <li><a href="#" role="button" onmousedown="sound.play()" class="pure-button switch" id="group-by-sex">Split by Sex</a>
+            <li><a href="#" role="button"  onclick="playAudio()" class="pure-button switch" id="group-by-sex">Split by Sex</a>
             </li>
-            <li><a href="#" role="button" onmousedown="sound.play()" class="pure-button switch" id="group-by-quarterly">Split by Quarterly</a>
+            <li><a href="#" role="button"  onclick="playAudio()" class="pure-button switch" id="group-by-quarterly">Split by Quarterly</a>
             </li>
   
         </ul>
@@ -119,7 +117,9 @@
 
     </div>
     <div id="chart"></div>
-
+   <audio id="myAudio">
+      <source src="click.mp3" type="audio/mpeg">
+    </audio>
     <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
