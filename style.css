@@ -21,7 +21,7 @@ li {
 
 /* 	Information boxes for different chart layouts */
 /* Positioning */
-#initial-content, #a, #b, #c, #d, #e, #f, #view-party-type, #view-donor-type, #view-source-type, #partyInfo, #conservative, #labour, #libdem, #individual, #company, #union, #society, #other, #public-or-private-money, #public-or-private-money-split, #private-money, #public-money { 
+#initial-content,#main, #a, #b, #c, #d, #e, #f, #view-party-type, #view-donor-type, #view-source-type, #partyInfo, #conservative, #labour, #libdem, #individual, #company, #union, #society, #other, #public-or-private-money, #public-or-private-money-split, #private-money, #public-money { 
     position: absolute; 
 }
 
@@ -290,7 +290,6 @@ https://github.com/yui/pure/blob/master/LICENSE.md
 }
 /*SUNBURST*/
 #main {
-  position:absolute;
   float: left;
   width: 750px;
 }
