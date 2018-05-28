@@ -618,7 +618,7 @@ function mouseover(d) {
 	  // Add the label at the end, for the percentage.
 	  trail.append("svg:text")
 	    .attr("id", "endlabel")
-	    .style("fill", "#000");
+	    .style("fill", "#eee");
 	}
 
 	// Generate a string that describes the points of a breadcrumb polygon.
