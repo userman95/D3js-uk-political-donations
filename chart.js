@@ -46,7 +46,6 @@ var comma = d3.format(",.0f");
 function transition(name) {
 	if (name === "all-donations") {
 		$("#main").fadeOut(250);
-		document.getElementById("main").style.visibility="hidden";
 		$("#initial-content").fadeIn(250);
 		$("#value-scale").fadeIn(1000);
 		$("#view-donor-type").fadeOut(250);
@@ -58,7 +57,6 @@ function transition(name) {
 		//location.reload();
 	}
 	if (name === "group-by-party") {
-		document.getElementById("main").style.visibility="hidden";
 		$("#initial-content").fadeOut(250);
 		$("#value-scale").fadeOut(250);
 		$("#view-donor-type").fadeOut(250);
@@ -70,7 +68,6 @@ function transition(name) {
 		return partyGroup();
 	}
 	if (name === "group-by-donor-type") {
-		document.getElementById("main").style.visibility="hidden";
 		$("#initial-content").fadeOut(250);
 		$("#value-scale").fadeOut(250);
 		$("#view-party-type").fadeOut(250);
@@ -82,7 +79,6 @@ function transition(name) {
 		return donorType();
 	}
 	if (name === "group-by-money-source"){
-		document.getElementById("main").style.visibility="hidden";
 		$("#initial-content").fadeOut(250);
 		$("#value-scale").fadeOut(250);
 		$("#view-donor-type").fadeOut(250);
@@ -94,7 +90,6 @@ function transition(name) {
 		return fundsType();
 	}
 	if (name === "group-by-amount-of-donation"){
-		document.getElementById("main").style.visibility="hidden";
 		$("#initial-content").fadeOut(250);
 		$("#value-scale").fadeOut(250);
 		$("#view-donor-type").fadeOut(250);
@@ -106,7 +101,6 @@ function transition(name) {
 		return amountOfDonation();	
 	}
 	if (name === "sunburst"){
-		document.getElementById("main").style.visibility="visible";
 		$("#initial-content").fadeOut(250);
 		$("#value-scale").fadeOut(250);
 		$("#view-donor-type").fadeOut(250);
