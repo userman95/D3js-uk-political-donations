@@ -545,7 +545,7 @@ function SunBurst(){
 		  for (var i = 0; i < csv.length; i++) {
 		     sequence = csv[i][1];
 
-		  var percentageString = sequence + ;
+		  var percentageString = sequence  ;
 		
 
 		  d3.select("#percentage")
