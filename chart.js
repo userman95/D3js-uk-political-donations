@@ -540,7 +540,7 @@ function SunBurst(){
 	 };
 
 	// Fade all but the current sequence, and show it in the breadcrumb trail.
-	function mouseover(d) {
+	function mouseover(d,csv) {
 		  var sequence =0;
 		  for (var i = 0; i < csv.length; i++) {
 		     sequence = csv[i][1];
