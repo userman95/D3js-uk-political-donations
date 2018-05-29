@@ -167,7 +167,12 @@ function moveToCentre(alpha) {
 	};
 }
 
-function moveToSexes(alpha) {
+function moveToDeviceType(alpha) {
+	var groupCentres = { 
+  		  con: { x: w / 3, y: h / 3.3}, 
+  		  lab: {x: w / 3, y: h / 2.3}, 
+  		  lib: {x: w / 3	, y: h / 1.8}
+	  };
 	return function(d) {
 		var centreX = groupCentres[d.type].x + 50;
 	         
