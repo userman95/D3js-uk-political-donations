@@ -169,9 +169,9 @@ function moveToCentre(alpha) {
 
 function moveToSexes(alpha) {
 	return function(d) {
-		var centreX = groupCentres[d.group].x + 50;
+		var centreX = groupCentres[d.type].x + 50;
 	         
-	        var centreY = groupCentres[d.group].y;
+	        var centreY = groupCentres[d.type].y;
 		
 
 		d.x += (centreX - d.x) * (brake + 0.02) * alpha * 1.1;
@@ -184,11 +184,11 @@ function moveToQuarterlies(alpha) {
 	return function(d){
 		     var centreY; 
 		     var centreX; 
-                 if (d.period === 'Q32017'){	
+                 if (d.type === 'Device for internet access: TV set with internet device	'){	
 			centreX = 470;
 			centreY = 250;
 
-		} else if(d.period ==='Q42017'){
+		} else if(d.type ==='Device for internet access: handheld computer	'){
                         centreX = 750;
 			centreY = 250;
 
@@ -246,11 +246,9 @@ function display(data) {
 		var node = {
 				radius: radiusScale(d.amount) / 5,
 				value: d.amount,
-				place: d.place,
-				group: d.group,
-				groupLabel: d.groupname,
-				period: d.period,
-				periodLabel: d.periodname,
+				place: d.location,
+				group: d.type,
+				groupLabel: d.prcof,
 				color: d.color,
 				x: Math.random() * w,
 				y: -y
@@ -274,7 +272,6 @@ function mouseover(d, i) {
 	var amount = mosie.attr("amount");
 	var place = d.place;
 	var group = d.groupLabel;
-	var period = d.periodLabel;
 	var offset = $("svg").offset();
 	
         var speech = new SpeechSynthesisUtterance(  d.place +" has unemployment rate" + amount );
