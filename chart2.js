@@ -65,7 +65,7 @@ function start() {
 		.data(nodes)
 	.enter().append("circle")
 		.attr("class", function(d) { return "node " + d.type; })
-		.attr("amount", function(d) { return d.value; })
+		.attr("amount", function(d) { return d.amount; })
 		.attr("location", function(d) { return d.location; })
 		.attr("prcof", function(d) { return d.prcof; })
 		.attr("type", function(d) { return d.type; })
@@ -148,15 +148,15 @@ function all(e) {
 function moveToCentre(alpha) {
 	return function(d) {
 		var centreX = svgCentre.x + 80;
-		if (d.value >=0) {
+		if (d.amount >=0) {
 				centreY = svgCentre.y + 150;
-			} else if (d.value <= 40) {
+			} else if (d.amount <= 40) {
 				centreY = svgCentre.y + 125;
-			} else if (d.value <= 50) {
+			} else if (d.amount <= 50) {
 				centreY = svgCentre.y + 95;
-			} else  if (d.value <= 60) {
+			} else  if (d.amount <= 60) {
 				centreY = svgCentre.y + 65;
-			} else  if (d.value <= 80) {
+			} else  if (d.amount <= 80) {
 				centreY = svgCentre.y -25;
 			} else {
 				centreY = svgCentre.y;
@@ -256,7 +256,7 @@ function display(data) {
 		var y = radiusScale(d.amount);
 		var node = {
 				radius: radiusScale(d.amount)*2,
-				value: d.amount,
+				amount: d.amount,
 				location: d.location,
 				type: d.type,
 				precentage: d.prcof,
