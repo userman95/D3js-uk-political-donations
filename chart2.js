@@ -282,7 +282,7 @@ function mouseover(d, i) {
 	var amount = mosie.attr("amount");
 	var place = d.place;
 	var category = d.category;
-	var percentage = d.prcof;
+	var percentage = d.percentage;
 	var offset = $("svg").offset();
 	
         var speech = new SpeechSynthesisUtterance(  d.place +" has percentage of" + amount+"%" );
