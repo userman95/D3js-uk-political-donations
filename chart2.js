@@ -67,7 +67,7 @@ function start() {
 		.attr("amount", function(d) { return d.value; })
 		.attr("place", function(d) { return d.place; })
 		.attr("period", function(d) { return d.period; })
-		.attr("group", function(d) { return d.group; })
+		.attr("type", function(d) { return d.type; })
 		// disabled because of slow Firefox SVG rendering
 		// though I admit I'm asking a lot of the browser and cpu with the number of nodes
 		//.style("opacity", 0.9)
@@ -257,8 +257,8 @@ function display(data) {
 				radius: radiusScale(d.amount) / 5,
 				value: d.amount,
 				place: d.location,
-				group: d.type,
-				groupLabel: d.prcof,
+				type: d.type,
+				precentage: d.prcof,
 				color: d.color,
 				x: Math.random() * w,
 				y: -y
@@ -281,7 +281,7 @@ function mouseover(d, i) {
 	var mosie = d3.select(this);
 	var amount = mosie.attr("amount");
 	var place = d.place;
-	var group = d.groupLabel;
+	var type = d.precentage;
 	var offset = $("svg").offset();
 	
         var speech = new SpeechSynthesisUtterance(  d.place +" has unemployment rate" + amount );
@@ -302,7 +302,7 @@ function mouseover(d, i) {
 	
 	var infoBox = "<p> Country: <b>" + place + "</b> " +  "<span><img src='" + imageFile + "' height='42' width='42' onError='this.src=\"https://github.com/favicon.ico\";'></span></p>" 	
 	
-	 							+ "<p> Target group: <b>" + group + "</b></p>"
+	 							+ "<p> Target group: <b>" + type + "</b></p>"
 								+ "<p> Type of period: <b>" + place + "</b></p>"
 								+ "<p> Rate: <b>" + comma(amount) + "</b></p>";
 	
