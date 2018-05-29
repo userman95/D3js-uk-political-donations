@@ -152,6 +152,7 @@ function moveToCentre(alpha) {
 				centreY = svgCentre.y + 150;
 			} else if (d.amount <= 50) {
 				centreY = svgCentre.y + 500;
+				console.log(centreY,d.amount);
 			} else if (d.amount <= 60) {
 				centreY = svgCentre.y + 95;
 			} else  if (d.amount <= 70) {
