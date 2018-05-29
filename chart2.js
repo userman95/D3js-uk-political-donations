@@ -138,7 +138,7 @@ function devType(e) {
 
 function all(e) {
 	node.each(moveToCentre(e.alpha))
-		.each(collide(0.001));
+		.each(collide(0.003));
 
 		node.attr("cx", function(d) { return d.x; })
 			.attr("cy", function(d) {return d.y; });
@@ -151,11 +151,11 @@ function moveToCentre(alpha) {
 		if (d.amount <=40) {
 				centreY = svgCentre.y + 150;
 			} else if (d.amount <= 50) {
-				centreY = svgCentre.y + 500;
+				centreY = svgCentre.y + 70;
 			} else if (d.amount <= 60) {
-				centreY = svgCentre.y + 95;
+				centreY = svgCentre.y + 50;
 			} else  if (d.amount <= 70) {
-				centreY = svgCentre.y + 65;
+				centreY = svgCentre.y + 20;
 			} else  if (d.amount <= 80) {
 				centreY = svgCentre.y -25;
 			} else {
@@ -185,6 +185,7 @@ function moveToQuarterlies(alpha) {
 		     var centreY; 
 		     var centreX; 
                  if (d.category === 'Device for internet access: TV set with internet device	'){	
+			 console.log(d.category);
 			centreX = 470;
 			centreY = 250;
 
