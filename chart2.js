@@ -250,12 +250,12 @@ function display(data) {
 
 	var radiusScale = d3.scale.sqrt()
 		.domain([0, maxVal])
-			.range([10, 100]);
+			.range([10, 20]);
 
 	data.forEach(function(d, i) {
 		var y = radiusScale(d.amount);
 		var node = {
-				radius: radiusScale(d.amount)*2,
+				radius: radiusScale(d.amount)/5,
 				amount: d.amount,
 				location: d.location,
 				type: d.type,
