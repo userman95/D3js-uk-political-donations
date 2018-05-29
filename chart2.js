@@ -193,6 +193,16 @@ function moveToQuarterlies(alpha) {
 			centreY = 250;
 
 		}
+		else if(d.type ==='Device for internet access: mobile phone (GPRS, UMTS)	'){
+                        centreX = 400;
+			centreY = 350;
+
+		}
+		else if(d.type ==='Device for internet access: desktop or portable computer	'){
+                        centreX = 200;
+			centreY = 600;
+
+		}
 
 		d.x += (centreX - d.x) * (brake + 0.02) * alpha * 1.1;
 		d.y += (centreY - d.y) * (brake + 0.02) * alpha * 1.1;
@@ -293,7 +303,7 @@ function mouseover(d, i) {
 	var infoBox = "<p> Country: <b>" + place + "</b> " +  "<span><img src='" + imageFile + "' height='42' width='42' onError='this.src=\"https://github.com/favicon.ico\";'></span></p>" 	
 	
 	 							+ "<p> Target group: <b>" + group + "</b></p>"
-								+ "<p> Type of period: <b>" + period + "</b></p>"
+								+ "<p> Type of period: <b>" + groupLabel + "</b></p>"
 								+ "<p> Rate: <b>" + comma(amount) + "</b></p>";
 	
 	
