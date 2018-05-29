@@ -280,7 +280,7 @@ function mouseover(d, i) {
 	// tooltip popup
 	var mosie = d3.select(this);
 	var amount = mosie.attr("amount");
-	var place = d.place;
+	var place = d.location;
 	var group = d.groupLabel;
 	var offset = $("svg").offset();
 	
@@ -303,7 +303,7 @@ function mouseover(d, i) {
 	var infoBox = "<p> Country: <b>" + place + "</b> " +  "<span><img src='" + imageFile + "' height='42' width='42' onError='this.src=\"https://github.com/favicon.ico\";'></span></p>" 	
 	
 	 							+ "<p> Target group: <b>" + group + "</b></p>"
-								+ "<p> Type of period: <b>" + groupLabel + "</b></p>"
+								+ "<p> Type of period: <b>" + place + "</b></p>"
 								+ "<p> Rate: <b>" + comma(amount) + "</b></p>";
 	
 	
