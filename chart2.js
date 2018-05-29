@@ -163,6 +163,7 @@ function moveToCentre(alpha) {
 				centreY = svgCentre.y;
 			}
 			
+			console.log(centreY,d.amount);
 
 		d.x += (centreX - d.x) * (brake + 0.06) * alpha * 1.1;
 		d.y += (centreY - 100 - d.y) * (brake + 0.06) * alpha * 1.1;
