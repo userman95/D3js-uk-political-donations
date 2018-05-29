@@ -148,15 +148,15 @@ function all(e) {
 function moveToCentre(alpha) {
 	return function(d) {
 		var centreX = svgCentre.x + 80;
-		if (d.value <= 5) {
+		if (d.value >=40) {
 				centreY = svgCentre.y + 150;
-			} else if (d.value <= 10) {
+			} else if (d.value <= 50) {
 				centreY = svgCentre.y + 125;
-			} else if (d.value <= 15) {
+			} else if (d.value <= 60) {
 				centreY = svgCentre.y + 95;
-			} else  if (d.value <= 20) {
+			} else  if (d.value <= 70) {
 				centreY = svgCentre.y + 65;
-			} else  if (d.value <= 25) {
+			} else  if (d.value <= 80) {
 				centreY = svgCentre.y -25;
 			} else {
 				centreY = svgCentre.y;
