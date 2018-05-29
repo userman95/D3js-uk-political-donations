@@ -4,7 +4,7 @@ var padding = 2;
 var nodes = [];
 var force, node, data, maxVal;
 var brake = 0.2;
-var radius = d3.scale.sqrt().range([10, 20]);
+var radius = d3.scale.sqrt().range([10, 100]);
 
 var groupCentres = { 
     'Device for internet access desktop or portable computer': { x: w / 4, y: h / 3.3}, 
@@ -246,11 +246,11 @@ function collide(alpha) {
 
 function display(data) {
 
-	maxVal = d3.max(data, function(d) { return d.amount; });
+	var maxVal = d3.max(data, function(d) { return d.amount; });
 
 	var radiusScale = d3.scale.sqrt()
 		.domain([0, maxVal])
-			.range([10, 20]);
+			.range([10, 100]);
 
 	data.forEach(function(d, i) {
 		var y = radiusScale(d.amount);
