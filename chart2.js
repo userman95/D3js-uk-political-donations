@@ -64,16 +64,16 @@ function start() {
 	node = nodeGroup.selectAll("circle")
 		.data(nodes)
 	.enter().append("circle")
-		.attr("class", function(d) { return "node " + d.type; })
+		.attr("class", function(d) { return "node " + d.category; })
 		.attr("amount", function(d) { return d.amount; })
 		.attr("place", function(d) { return d.place; })
 		.attr("prcof", function(d) { return d.prcof; })
-		.attr("type", function(d) { return d.type; })
+		.attr("category", function(d) { return d.category; })
 		// disabled because of slow Firefox SVG rendering
 		// though I admit I'm asking a lot of the browser and cpu with the number of nodes
 		//.style("opacity", 0.9)
 		.attr("r", 0)
-		.style("fill", function(d) { return fill(d.type); })
+		.style("fill", function(d) { return fill(d.category); })
 		.on("mouseover", mouseover)
 		.on("mouseout", mouseout)
 	        .on("click", function(d){
@@ -170,9 +170,9 @@ function moveToCentre(alpha) {
 
 function moveToDeviceType(alpha) {
 	return function(d) {
-		var centreX = groupCentres[d.type].x + 50;
+		var centreX = groupCentres[d.category].x + 50;
 	         
-	        var centreY = groupCentres[d.type].y;
+	        var centreY = groupCentres[d.category].y;
 		
 
 		d.x += (centreX - d.x) * (brake + 0.02) * alpha * 1.1;
@@ -185,21 +185,21 @@ function moveToQuarterlies(alpha) {
 	return function(d){
 		     var centreY; 
 		     var centreX; 
-                 if (d.type === 'Device for internet access: TV set with internet device	'){	
+                 if (d.category === 'Device for internet access: TV set with internet device	'){	
 			centreX = 470;
 			centreY = 250;
 
-		} else if(d.type ==='Device for internet access: handheld computer	'){
+		} else if(d.category ==='Device for internet access: handheld computer	'){
                         centreX = 750;
 			centreY = 250;
 
 		}
-		else if(d.type ==='Device for internet access: mobile phone (GPRS, UMTS)	'){
+		else if(d.category ==='Device for internet access: mobile phone (GPRS, UMTS)	'){
                         centreX = 400;
 			centreY = 350;
 
 		}
-		else if(d.type ==='Device for internet access: desktop or portable computer	'){
+		else if(d.category ==='Device for internet access: desktop or portable computer	'){
                         centreX = 200;
 			centreY = 600;
 
@@ -258,7 +258,7 @@ function display(data) {
 				radius: radiusScale(d.amount),
 				amount: d.amount,
 				place: d.place,
-				type: d.type,
+				category: d.category,
 				precentage: d.prcof,
 				color: d.color,
 				x: Math.random() * w,
@@ -282,7 +282,7 @@ function mouseover(d, i) {
 	var mosie = d3.select(this);
 	var amount = mosie.attr("amount");
 	var place = d.place;
-	var type = d.type;
+	var category = d.category;
 	var percentage = d.prcof;
 	var offset = $("svg").offset();
 	
@@ -305,7 +305,7 @@ function mouseover(d, i) {
 	var infoBox = "<p> Country: <b>" + place + "</b> " +  "<span><img src='" + imageFile + "' height='42' width='42' onError='this.src=\"https://github.com/favicon.ico\";'></span></p>" 	
 	
 	 							+ "<p> Target group: <b>" + percentage + "</b></p>"
-								+ "<p> Device: <b>" + type + "</b></p>"
+								+ "<p> Device: <b>" + category + "</b></p>"
 								+ "<p> Rate: <b>" + comma(amount) + "</b></p>";
 	
 	
