@@ -184,27 +184,26 @@ function moveToQuarterlies(alpha) {
 	return function(d){
 		     var centreY; 
 		     var centreX; 
-		 console.log(d.category);
-
-                 if (d.category === 'Device for internet access: TV set with internet device	'){	
+                 if (d.category === 'Device for internet access: TV set with internet device'){	
 			centreX = 470;
 			centreY = 250;
 
-		} else if(d.category ==='Device for internet access: handheld computer	'){
+		} else if(d.category ==='Device for internet access: handheld computer'){
                         centreX = 750;
 			centreY = 250;
 
 		}
-		else if(d.category ==='Device for internet access: mobile phone (GPRS, UMTS)	'){
+		else if(d.category ==='Device for internet access: mobile phone (GPRS, UMTS)'){
                         centreX = 400;
 			centreY = 350;
 
 		}
-		else if(d.category ==='Device for internet access: desktop or portable computer	'){
+		else if(d.category ==='Device for internet access: desktop or portable computer'){
                         centreX = 200;
 			centreY = 600;
 
 		}
+			 console.log(d.category);
 
 		d.x += (centreX - d.x) * (brake + 0.02) * alpha * 1.1;
 		d.y += (centreY - d.y) * (brake + 0.02) * alpha * 1.1;
