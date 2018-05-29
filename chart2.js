@@ -280,7 +280,7 @@ function mouseover(d, i) {
 	// tooltip popup
 	var mosie = d3.select(this);
 	var amount = mosie.attr("amount");
-	var place = d.location;
+	var place = d.place;
 	var group = d.groupLabel;
 	var offset = $("svg").offset();
 	
