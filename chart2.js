@@ -47,14 +47,14 @@ function transition(name) {
 		$("#value-scale").fadeOut(250);
 		$("#view-sex-type").fadeIn(1000);
 		$("#view-quarterly-type").fadeOut(250);
-		return sexType();
+		return DeviceType();
 	}
 	if (name === "group-by-quarterly") {
 		$("#initial-content").fadeOut(250);
 		$("#value-scale").fadeOut(250);
 		$("#view-sex-type").fadeOut(250);
 		$("#view-quarterly-type").fadeIn(1000);
-		return quarterlyType();
+		return PercentageOf();
 	}
 }
 
@@ -103,32 +103,32 @@ function total() {
 }
 
 
-function sexType() {
+function DeviceType() {
 	force.gravity(0)
 		.friction(0.8)
 		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
-		.on("tick", sexes)
+		.on("tick", devType)
 		.start();
 }
 
-function quarterlyType() {
+function PercentageOf() {
 	force.gravity(0)
 		.friction(0.75)
 		.charge(function(d) { return -Math.pow(d.radius, 2.0) / 3; })
-		.on("tick", quarterlies)
+		.on("tick", perntgType)
 		.start();
 }
 
 
-function quarterlies(e) {
+function perntgType(e) {
 	node.each(moveToQuarterlies(e.alpha));
 
 		node.attr("cx", function(d) { return d.x; })
 			.attr("cy", function(d) {return d.y; });
 }
 
-function sexes(e) {
-	node.each(moveToSexes(e.alpha));
+function devType(e) {
+	node.each(moveToDeviceType(e.alpha));
 
 		node.attr("cx", function(d) { return d.x; })
 			.attr("cy", function(d) {return d.y; });
@@ -282,6 +282,7 @@ function mouseover(d, i) {
 	var amount = mosie.attr("amount");
 	var place = d.place;
 	var type = d.type;
+	var percentage = d.percentage;
 	var offset = $("svg").offset();
 	
         var speech = new SpeechSynthesisUtterance(  d.place +" has percentage of" + amount+"%" );
@@ -302,7 +303,7 @@ function mouseover(d, i) {
 	
 	var infoBox = "<p> Country: <b>" + place + "</b> " +  "<span><img src='" + imageFile + "' height='42' width='42' onError='this.src=\"https://github.com/favicon.ico\";'></span></p>" 	
 	
-	 							+ "<p> Target group: <b>" + type + "</b></p>"
+	 							+ "<p> Target group: <b>" + percentage + "</b></p>"
 								+ "<p> Device: <b>" + type + "</b></p>"
 								+ "<p> Rate: <b>" + comma(amount) + "</b></p>";
 	
