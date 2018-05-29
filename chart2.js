@@ -330,3 +330,8 @@ $(document).ready(function() {
     return d3.csv("data/DataInfo.csv", display);
 
 });
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+    x.play(); 
+} 
