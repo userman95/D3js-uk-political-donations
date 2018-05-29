@@ -254,7 +254,7 @@ function display(data) {
 	data.forEach(function(d, i) {
 		var y = radiusScale(d.amount);
 		var node = {
-				radius: radiusScale(d.amount)*5,
+				radius: radiusScale(d.amount)*3,
 				value: d.amount,
 				place: d.location,
 				type: d.type,
@@ -281,10 +281,10 @@ function mouseover(d, i) {
 	var mosie = d3.select(this);
 	var amount = mosie.attr("amount");
 	var place = d.place;
-	var type = d.precentage;
+	var type = d.type;
 	var offset = $("svg").offset();
 	
-        var speech = new SpeechSynthesisUtterance(  d.place +" has unemployment rate" + amount );
+        var speech = new SpeechSynthesisUtterance(  d.place +" has percentage of" + amount+"%" );
         window.speechSynthesis.speak(speech);
 
 	// image url that want to check
@@ -303,7 +303,7 @@ function mouseover(d, i) {
 	var infoBox = "<p> Country: <b>" + place + "</b> " +  "<span><img src='" + imageFile + "' height='42' width='42' onError='this.src=\"https://github.com/favicon.ico\";'></span></p>" 	
 	
 	 							+ "<p> Target group: <b>" + type + "</b></p>"
-								+ "<p> Type of period: <b>" + place + "</b></p>"
+								+ "<p> Device: <b>" + type + "</b></p>"
 								+ "<p> Rate: <b>" + comma(amount) + "</b></p>";
 	
 	
