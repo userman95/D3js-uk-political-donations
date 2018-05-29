@@ -7,9 +7,9 @@ var brake = 0.2;
 var radius = d3.scale.sqrt().range([10, 20]);
 
 var groupCentres = { 
-    'Device for internet access desktop or portable computer': { x: w / 3, y: h / 3.3}, 
-    'Device for internet access: TV set with internet device': {x: w / 3, y: h / 2.3}, 
-    'Device for internet access: handheld computer': {x: w / 3	, y: h / 1.8},
+    'Device for internet access desktop or portable computer': { x: w / 4, y: h / 3.3}, 
+    'Device for internet access: TV set with internet device': {x: w / 4, y: h / 2.3}, 
+    'Device for internet access: handheld computer': {x: w / 4	, y: h / 1.8},
     'Device for internet access: mobile phone (GPRS, UMTS)':{x: w / 4 , y: h / 1.8}
   };
 
