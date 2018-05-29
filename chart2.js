@@ -77,7 +77,7 @@ function start() {
 		.on("mouseover", mouseover)
 		.on("mouseout", mouseout)
 	        .on("click", function(d){
-			  window.open('http://google.com/search?q='+d.place);
+			  window.open('http://google.com/search?q='+d.location);
 		})
 		// Alternative title based 'tooltips'
 		// node.append("title")
@@ -257,7 +257,7 @@ function display(data) {
 		var node = {
 				radius: radiusScale(d.amount)*2,
 				value: d.amount,
-				place: d.location,
+				location: d.location,
 				type: d.type,
 				precentage: d.prcof,
 				color: d.color,
@@ -281,16 +281,16 @@ function mouseover(d, i) {
 	// tooltip popup
 	var mosie = d3.select(this);
 	var amount = mosie.attr("amount");
-	var place = d.place;
+	var location = d.location;
 	var type = d.type;
 	var percentage = d.prcof;
 	var offset = $("svg").offset();
 	
-        var speech = new SpeechSynthesisUtterance(  d.place +" has percentage of" + amount+"%" );
+        var speech = new SpeechSynthesisUtterance(  d.location +" has percentage of" + amount+"%" );
         window.speechSynthesis.speak(speech);
 
 	// image url that want to check
-	var imageFile = "https://raw.githubusercontent.com/p12tzia/D3js-uk-political-donations/gh-pages/photos1/" + place + ".ico";
+	var imageFile = "https://raw.githubusercontent.com/p12tzia/D3js-uk-political-donations/gh-pages/photos1/" + location + ".ico";
 
 	
 	
@@ -302,7 +302,7 @@ function mouseover(d, i) {
 	
 
 	
-	var infoBox = "<p> Country: <b>" + place + "</b> " +  "<span><img src='" + imageFile + "' height='42' width='42' onError='this.src=\"https://github.com/favicon.ico\";'></span></p>" 	
+	var infoBox = "<p> Country: <b>" + location + "</b> " +  "<span><img src='" + imageFile + "' height='42' width='42' onError='this.src=\"https://github.com/favicon.ico\";'></span></p>" 	
 	
 	 							+ "<p> Target group: <b>" + percentage + "</b></p>"
 								+ "<p> Device: <b>" + type + "</b></p>"
