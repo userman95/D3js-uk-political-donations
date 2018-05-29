@@ -64,10 +64,10 @@ function start() {
 	node = nodeGroup.selectAll("circle")
 		.data(nodes)
 	.enter().append("circle")
-		.attr("class", function(d) { return "node " + d.group; })
+		.attr("class", function(d) { return "node " + d.type; })
 		.attr("amount", function(d) { return d.value; })
-		.attr("place", function(d) { return d.place; })
-		.attr("period", function(d) { return d.period; })
+		.attr("location", function(d) { return d.location; })
+		.attr("prcof", function(d) { return d.prcof; })
 		.attr("type", function(d) { return d.type; })
 		// disabled because of slow Firefox SVG rendering
 		// though I admit I'm asking a lot of the browser and cpu with the number of nodes
