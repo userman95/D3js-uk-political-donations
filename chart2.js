@@ -184,8 +184,9 @@ function moveToQuarterlies(alpha) {
 	return function(d){
 		     var centreY; 
 		     var centreX; 
+		 console.log(d.category);
+
                  if (d.category === 'Device for internet access: TV set with internet device	'){	
-			 console.log(d.category);
 			centreX = 470;
 			centreY = 250;
 
